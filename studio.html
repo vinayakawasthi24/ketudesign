@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Studio - Ketu Studio | Architectural Workspace Curation</title>
+    <!-- Tailwind CSS with Forms and Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Playfair Display and Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Custom Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#670020",
+                        "surface-container-lowest": "#020d26",
+                        "secondary-fixed": "#ffd9dc",
+                        "surface-tint": "#b1c5ff",
+                        "surface-container": "#131f38",
+                        "soft-pink": "#FFD6E7",
+                        "royal-blue": "#2B56F5",
+                        "surface": "#06132c",
+                        "tertiary-container": "#004957",
+                        "off-white": "#FAFAFA",
+                        "inverse-surface": "#d9e2ff",
+                        "outline": "#8e909d",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary-container": "#ff9da8",
+                        "secondary-container": "#8c1b36",
+                        "surface-dim": "#06132c",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-tertiary-container": "#37bedb",
+                        "primary-container": "#0b3d91",
+                        "surface-container-highest": "#29344f",
+                        "on-error": "#690005",
+                        "secondary": "#ffb2ba",
+                        "on-primary-fixed-variant": "#144296",
+                        "on-surface-variant": "#c4c6d3",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "on-primary-container": "#8dadff",
+                        "tertiary-fixed-dim": "#58d6f4",
+                        "secondary-fixed-dim": "#ffb2ba",
+                        "on-surface": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#891834",
+                        "on-background": "#d9e2ff",
+                        "champagne-gold": "#D8C3A5",
+                        "background": "#06132c",
+                        "on-primary": "#002c71",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary-fixed": "#400010",
+                        "outline-variant": "#434652",
+                        "inverse-on-surface": "#24304a",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#003640",
+                        "inverse-primary": "#345baf",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-variant": "#29344f",
+                        "surface-container-high": "#1e2a43",
+                        "tertiary-fixed": "#adecff",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#2d3953",
+                        "primary": "#b1c5ff",
+                        "surface-container-low": "#0e1b34",
+                        "tertiary": "#58d6f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-lg": "130px",
+                        "section-v-md": "110px",
+                        "gutter-grid": "30px",
+                        "container-margin": "8%",
+                        "gap-component": "20px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["54px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.9", "fontWeight": "400"}],
+                        "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "4px", "fontWeight": "600"}],
+                        "headline-lg": ["74px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "body-lg": ["22px", {"lineHeight": "1.8", "fontWeight": "300"}],
+                        "headline-md": ["34px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "500"}],
+                        "display-hero": ["92px", {"lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="relative min-h-screen cursor-none selection:bg-primary selection:text-on-primary">
+    <!-- Ambient Radial Glow and Custom Cursor (Synchronized globally) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[8%] py-6 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 hover-interactive">
+        <a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">
+            KETU STUDIO
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-on-surface text-label-caps font-label-caps border-b border-champagne-gold pb-1 transition-colors duration-500 uppercase" href="studio.html">Studio</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="portfolio.html">Portfolio</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="insights.html">Insights</a>
+        </div>
+        <a href="contact.html" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
+            Book Consultation
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden text-on-surface hover-interactive">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+
+    <!-- Studio Hero -->
+    <header class="relative w-full h-[60vh] flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
+        <div class="absolute inset-0 z-0">
+            <img alt="Design Studio Office" class="w-full h-full object-cover opacity-40 scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-surface"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-5xl text-center flex flex-col items-center gap-4 gsap-reveal">
+            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px]">Architectural Intelligence</span>
+            <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface tracking-tighter">
+                Curators of Corporate Authority.
+            </h1>
+        </div>
+    </header>
+
+    <!-- Narrative Section (Off-white for visual relief) -->
+    <section class="w-full px-container-margin py-section-v-lg relative z-10 bg-white text-surface-container-lowest">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-grid items-start">
+            <div class="lg:col-span-4 gsap-reveal">
+                <span class="font-label-caps text-label-caps uppercase tracking-[4px] text-outline">Who We Are</span>
+                <h2 class="font-headline-md text-headline-md leading-tight text-surface-container-lowest mt-4">
+                    Where Workplace Strategy Meets Architectural Drama.
+                </h2>
+            </div>
+            <div class="lg:col-span-8 flex flex-col gap-8 font-body-md text-body-md text-surface-container-lowest/80 gsap-reveal">
+                <p class="font-body-lg text-body-lg text-surface-container-lowest font-light leading-relaxed">
+                    Ketu Studio is an elite, turnkey commercial interior design agency representing the intersection of psychological workflow engineering and dramatic spatial aesthetics.
+                </p>
+                <p>
+                    We believe an office should never be a neutral containers for bodies. It is a critical machine that actively dictates corporate culture, projects market dominance, and shapes worker productivity. We replace the generic white drywalls of corporate leases with rich natural stones, structured metallic lines, custom lighting matrices, and environmental acoustics.
+                </p>
+                <p>
+                    Our multidisciplinary team of designers, engineers, construction managers, and workplace psychologists control the entire process from conceptual zoning to final material placement. Operating across India, we have created workspaces for industry titans that elevate physical attendance from an obligation to a premium lifestyle experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="w-full px-container-margin py-section-v-lg bg-surface relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col gap-16">
+            <div class="text-center gsap-reveal">
+                <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px]">Mind Share</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mt-4">The Architectural Elite</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Leader 1 -->
+                <div class="glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal">
+                    <div class="w-full aspect-[4/5] overflow-hidden relative">
+                        <img alt="Ketan Verma - Design Director" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"/>
+                    </div>
+                    <div class="p-8">
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Design Director & Founder</span>
+                        <h3 class="font-headline-md text-on-surface text-2xl">Ketan Verma</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            Combining 15+ years of luxury hospitality and high-end workspace design. Ketan oversees structural form and thematic narrative for all studio commissions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal">
+                    <div class="w-full aspect-[4/5] overflow-hidden relative">
+                        <img alt="Suhasini Sen - Lead Architect" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"/>
+                    </div>
+                    <div class="p-8">
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Lead Spatial Architect</span>
+                        <h3 class="font-headline-md text-on-surface text-2xl">Suhasini Sen</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            A graduate of AA School of Architecture, Suhasini specializes in geometric efficiency, biophilic integration, and structural lighting integrations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal">
+                    <div class="w-full aspect-[4/5] overflow-hidden relative">
+                        <img alt="Amit Roy - Project Execution" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"/>
+                    </div>
+                    <div class="p-8">
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Head of Turnkey Execution</span>
+                        <h3 class="font-headline-md text-on-surface text-2xl">Amit Roy</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            Amit guarantees that artistic visions are assembled with structural integrity. He manages our national supply chains and engineering divisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Bento Grid (Off-white background) -->
+    <section class="w-full px-container-margin py-section-v-lg bg-white text-surface-container-lowest relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col gap-16">
+            <div class="gsap-reveal">
+                <span class="font-label-caps text-label-caps uppercase tracking-[4px] text-outline">Operation Model</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-surface-container-lowest mt-4">The Blueprint to Perfection</h2>
+            </div>
+
+            <!-- Bento Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <!-- Step 1 (Left Wide) -->
+                <div class="md:col-span-7 bg-off-white border border-black/5 rounded-[35px] p-10 flex flex-col justify-between hover:shadow-lg transition-shadow gsap-reveal">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-royal-blue font-bold tracking-[3px] block mb-6">Phase 01</span>
+                        <h3 class="font-headline-md text-3xl text-surface-container-lowest mb-4">Workspace Strategy & Flow Metrics</h3>
+                        <p class="font-body-md text-body-md text-surface-container-lowest/70 max-w-lg">
+                            We initiate by analyzing your organization's departmental links, noise patterns, and space usage rates. This is design backed by real spatial data, ensuring maximum efficiency.
+                        </p>
+                    </div>
+                    <div class="border-t border-black/10 pt-8 mt-12 flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-outline">DURATION: 2-3 WEEKS</span>
+                        <span class="material-symbols-outlined text-royal-blue text-4xl">analytics</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Right Tall) -->
+                <div class="md:col-span-5 bg-off-white border border-black/5 rounded-[35px] p-10 flex flex-col justify-between hover:shadow-lg transition-shadow gsap-reveal">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-royal-blue font-bold tracking-[3px] block mb-6">Phase 02</span>
+                        <h3 class="font-headline-md text-3xl text-surface-container-lowest mb-4">Immersive Visual Simulation</h3>
+                        <p class="font-body-md text-body-md text-surface-container-lowest/70">
+                            We compile spatial assets into realistic 3D VR renders. You experience the materials, acoustics, and sightlines virtually before a single hammer is raised.
+                        </p>
+                    </div>
+                    <div class="border-t border-black/10 pt-8 mt-12 flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-outline">DURATION: 3 WEEKS</span>
+                        <span class="material-symbols-outlined text-royal-blue text-4xl">view_in_ar</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Left Tall) -->
+                <div class="md:col-span-5 bg-off-white border border-black/5 rounded-[35px] p-10 flex flex-col justify-between hover:shadow-lg transition-shadow gsap-reveal">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-royal-blue font-bold tracking-[3px] block mb-6">Phase 03</span>
+                        <h3 class="font-headline-md text-3xl text-surface-container-lowest mb-4">Global Material Curation</h3>
+                        <p class="font-body-md text-body-md text-surface-container-lowest/70">
+                            We bypass middle-men to directly source natural stones, specialized veneer panels, and custom lighting profiles directly from premium international quarries and fabrication houses.
+                        </p>
+                    </div>
+                    <div class="border-t border-black/10 pt-8 mt-12 flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-outline">DURATION: 4 WEEKS</span>
+                        <span class="material-symbols-outlined text-royal-blue text-4xl">architecture</span>
+                    </div>
+                </div>
+
+                <!-- Step 4 (Right Wide) -->
+                <div class="md:col-span-7 bg-off-white border border-black/5 rounded-[35px] p-10 flex flex-col justify-between hover:shadow-lg transition-shadow gsap-reveal">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-royal-blue font-bold tracking-[3px] block mb-6">Phase 04</span>
+                        <h3 class="font-headline-md text-3xl text-surface-container-lowest mb-4">Precision Turnkey Construction</h3>
+                        <p class="font-body-md text-body-md text-surface-container-lowest/70 max-w-lg">
+                            Our execution squad handles the site integration completely. Handing you a ready-to-work, architecturally complete asset on time and under absolute budget guarantees.
+                        </p>
+                    </div>
+                    <div class="border-t border-black/10 pt-8 mt-12 flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-outline">DURATION: 8-12 WEEKS</span>
+                        <span class="material-symbols-outlined text-royal-blue text-4xl">construction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-[8%] py-[110px] flex flex-col md:flex-row justify-between border-t border-white/5 bg-surface-container-lowest dark:bg-surface-container-lowest relative z-10">
+        <div class="flex flex-col gap-6 mb-12 md:mb-0">
+            <div class="font-headline-lg text-headline-lg text-on-surface dark:text-on-surface uppercase">
+                KETU STUDIO
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                Engineering excellence in commercial interior design. Pan India Operations. One-stop solution for luxury workspace needs.
+            </p>
+            <p class="font-label-sm text-label-sm text-outline mt-auto uppercase tracking-widest">
+                © 2024 Ketu Design Studio. Engineering Excellence.
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Navigation</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="studio.html">Studio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="portfolio.html">Portfolio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="services.html">Services</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Legal</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Terms of Service</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Careers</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Press Kit</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Javascript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Services &amp; Capabilities - Ketu Studio | Workspace Engineering</title>
+    <!-- Tailwind CSS with Forms and Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Playfair Display and Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Custom Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#670020",
+                        "surface-container-lowest": "#020d26",
+                        "secondary-fixed": "#ffd9dc",
+                        "surface-tint": "#b1c5ff",
+                        "surface-container": "#131f38",
+                        "soft-pink": "#FFD6E7",
+                        "royal-blue": "#2B56F5",
+                        "surface": "#06132c",
+                        "tertiary-container": "#004957",
+                        "off-white": "#FAFAFA",
+                        "inverse-surface": "#d9e2ff",
+                        "outline": "#8e909d",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary-container": "#ff9da8",
+                        "secondary-container": "#8c1b36",
+                        "surface-dim": "#06132c",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-tertiary-container": "#37bedb",
+                        "primary-container": "#0b3d91",
+                        "surface-container-highest": "#29344f",
+                        "on-error": "#690005",
+                        "secondary": "#ffb2ba",
+                        "on-primary-fixed-variant": "#144296",
+                        "on-surface-variant": "#c4c6d3",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "on-primary-container": "#8dadff",
+                        "tertiary-fixed-dim": "#58d6f4",
+                        "secondary-fixed-dim": "#ffb2ba",
+                        "on-surface": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#891834",
+                        "on-background": "#d9e2ff",
+                        "champagne-gold": "#D8C3A5",
+                        "background": "#06132c",
+                        "on-primary": "#002c71",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary-fixed": "#400010",
+                        "outline-variant": "#434652",
+                        "inverse-on-surface": "#24304a",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#003640",
+                        "inverse-primary": "#345baf",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-variant": "#29344f",
+                        "surface-container-high": "#1e2a43",
+                        "tertiary-fixed": "#adecff",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#2d3953",
+                        "primary": "#b1c5ff",
+                        "surface-container-low": "#0e1b34",
+                        "tertiary": "#58d6f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-lg": "130px",
+                        "section-v-md": "110px",
+                        "gutter-grid": "30px",
+                        "container-margin": "8%",
+                        "gap-component": "20px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["54px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.9", "fontWeight": "400"}],
+                        "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "4px", "fontWeight": "600"}],
+                        "headline-lg": ["74px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "body-lg": ["22px", {"lineHeight": "1.8", "fontWeight": "300"}],
+                        "headline-md": ["34px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "500"}],
+                        "display-hero": ["92px", {"lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="relative min-h-screen cursor-none selection:bg-primary selection:text-on-primary">
+    <!-- Ambient Radial Glow and Custom Cursor (Synchronized globally) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[8%] py-6 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 hover-interactive">
+        <a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">
+            KETU STUDIO
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="studio.html">Studio</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="portfolio.html">Portfolio</a>
+            <a class="text-on-surface text-label-caps font-label-caps border-b border-champagne-gold pb-1 transition-colors duration-500 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="insights.html">Insights</a>
+        </div>
+        <a href="contact.html" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
+            Book Consultation
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden text-on-surface hover-interactive">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+
+    <!-- Services Hero -->
+    <header class="relative w-full h-[50vh] flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
+        <div class="absolute inset-0 z-0">
+            <img alt="Commercial Workspace" class="w-full h-full object-cover opacity-45 scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-surface"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-5xl text-center flex flex-col items-center gap-4 gsap-reveal">
+            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px]">Our Capabilities</span>
+            <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface tracking-tighter">
+                Engineering Spatial Authority.
+            </h1>
+        </div>
+    </header>
+
+    <!-- Services Deep Dive Section -->
+    <section class="w-full px-container-margin py-section-v-lg relative z-10 bg-surface">
+        <div class="max-w-6xl mx-auto flex flex-col gap-12">
+            <!-- Dynamic Services Tabs -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Sidebar buttons -->
+                <div class="lg:col-span-4 flex flex-col gap-4 hover-interactive gsap-reveal">
+                    <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[3px] block mb-2">Detailed Menu</span>
+                    <button class="service-tab-btn text-left p-6 rounded-[20px] bg-white/5 border border-white/15 transition-all text-on-surface uppercase font-headline-md text-xl" data-service-index="0">
+                        01 / Spatial Engineering
+                    </button>
+                    <button class="service-tab-btn text-left p-6 rounded-[20px] bg-transparent border border-white/5 transition-all text-on-surface/50 hover:text-on-surface hover:border-white/10 uppercase font-headline-md text-xl" data-service-index="1">
+                        02 / C-Suite Design
+                    </button>
+                    <button class="service-tab-btn text-left p-6 rounded-[20px] bg-transparent border border-white/5 transition-all text-on-surface/50 hover:text-on-surface hover:border-white/10 uppercase font-headline-md text-xl" data-service-index="2">
+                        03 / Lobbies &amp; Entryways
+                    </button>
+                    <button class="service-tab-btn text-left p-6 rounded-[20px] bg-transparent border border-white/5 transition-all text-on-surface/50 hover:text-on-surface hover:border-white/10 uppercase font-headline-md text-xl" data-service-index="3">
+                        04 / Legacy Renovations
+                    </button>
+                </div>
+                
+                <!-- Display Area -->
+                <div class="lg:col-span-8 glass-card rounded-[35px] p-8 md:p-12 min-h-[500px] flex flex-col justify-between gsap-reveal" id="service-display-box">
+                    <!-- Content injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace Estimator (Off-white for visual relief) -->
+    <section class="w-full px-container-margin py-section-v-lg bg-white text-surface-container-lowest relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col gap-16">
+            <div class="text-center gsap-reveal">
+                <span class="font-label-caps text-label-caps uppercase tracking-[4px] text-outline">Interactive Budgeting</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-surface-container-lowest mt-4">Workspace Cost Estimator</h2>
+                <p class="font-body-md text-body-md text-surface-container-lowest/60 mt-4 max-w-xl mx-auto">
+                    Get an instant transparent estimate of your project timeline, design cycles, and ballpark budget parameters based on project footprints.
+                </p>
+            </div>
+
+            <!-- Estimator UI Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-8 hover-interactive">
+                <!-- Controls (Left) -->
+                <div class="lg:col-span-7 bg-off-white border border-black/5 rounded-[35px] p-8 md:p-10 flex flex-col gap-8">
+                    <!-- Slider 1: Area -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between items-center">
+                            <label class="font-label-caps text-label-caps text-outline uppercase" for="range-area">1. Workspace Area (Sq Ft)</label>
+                            <span class="font-headline-md text-2xl text-royal-blue" id="val-area">10,000 sq ft</span>
+                        </div>
+                        <input class="w-full h-2 bg-black/10 rounded-lg appearance-none cursor-pointer accent-royal-blue" id="range-area" max="50000" min="2000" step="1000" type="range" value="10000"/>
+                        <div class="flex justify-between text-xs text-black/40">
+                            <span>2,000 sq ft</span>
+                            <span>50,000 sq ft</span>
+                        </div>
+                    </div>
+
+                    <!-- Slider 2: Headcount -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between items-center">
+                            <label class="font-label-caps text-label-caps text-outline uppercase" for="range-headcount">2. Target Employee Count</label>
+                            <span class="font-headline-md text-2xl text-royal-blue" id="val-headcount">80 Employees</span>
+                        </div>
+                        <input class="w-full h-2 bg-black/10 rounded-lg appearance-none cursor-pointer accent-royal-blue" id="range-headcount" max="500" min="20" step="5" type="range" value="80"/>
+                        <div class="flex justify-between text-xs text-black/40">
+                            <span>20 Staff</span>
+                            <span>500 Staff</span>
+                        </div>
+                    </div>
+
+                    <!-- Options Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <!-- Quality Choice -->
+                        <div class="flex flex-col gap-3">
+                            <label class="font-label-caps text-label-caps text-outline uppercase" for="select-tier">3. Architectural Finishes</label>
+                            <select class="w-full bg-white border border-black/15 rounded-[15px] p-4 text-sm font-semibold focus:outline-none focus:border-royal-blue text-surface-container-lowest" id="select-tier">
+                                <option value="executive">Premium Corporate (Rs 3,500 / sqft)</option>
+                                <option value="elite">Executive Elite (Rs 5,500 / sqft)</option>
+                                <option value="luxury">Ultra-Luxury Editorial (Rs 7,500 / sqft)</option>
+                            </select>
+                        </div>
+
+                        <!-- Vibe Choice -->
+                        <div class="flex flex-col gap-3">
+                            <label class="font-label-caps text-label-caps text-outline uppercase" for="select-vibe">4. Design Direction Theme</label>
+                            <select class="w-full bg-white border border-black/15 rounded-[15px] p-4 text-sm font-semibold focus:outline-none focus:border-royal-blue text-surface-container-lowest" id="select-vibe">
+                                <option value="navy">Cinematic Navy &amp; Brass</option>
+                                <option value="wellness">Circadian Lighting &amp; Biophilic</option>
+                                <option value="brutalist">Modern Concrete &amp; Oak Brutalism</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Display Results (Right) -->
+                <div class="lg:col-span-5 bg-surface-container-lowest border border-white/5 rounded-[35px] p-8 md:p-10 flex flex-col justify-between text-white shadow-xl relative overflow-hidden">
+                    <!-- Background ambient glow just inside card -->
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-royal-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="flex flex-col gap-6 relative z-10">
+                        <span class="font-label-caps text-label-caps text-champagne-gold uppercase tracking-[2px]">Ballpark Calculation</span>
+                        
+                        <!-- Cost Display -->
+                        <div>
+                            <span class="text-xs text-outline uppercase tracking-wider block mb-1">Estimated Budget Range</span>
+                            <span class="font-headline-md text-3xl md:text-4xl text-white" id="out-budget">₹35.0 Lakh - ₹42.0 Lakh</span>
+                            <p class="text-xs text-outline/60 mt-1">*Turnkey construction and design cycle included</p>
+                        </div>
+
+                        <hr class="border-white/10"/>
+
+                        <!-- Metrics Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-xs text-outline uppercase block mb-1">Project Timeline</span>
+                                <span class="font-headline-md text-xl text-white" id="out-timeline">9 - 11 Weeks</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-outline uppercase block mb-1">Design Revisions</span>
+                                <span class="font-headline-md text-xl text-white" id="out-revisions">Unlimited</span>
+                            </div>
+                        </div>
+
+                        <hr class="border-white/10"/>
+
+                        <div>
+                            <span class="text-xs text-outline uppercase block mb-1">Key Spatial Feature Recommendation</span>
+                            <p class="font-body-md text-sm text-outline-variant mt-2 leading-relaxed" id="out-feature">
+                               Circadian sensor arrays and customized acoustic dividers to buffer software groups.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="w-full mt-8 py-4 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 text-center uppercase" id="btn-request-proposal">
+                        Apply Estimate to Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-[8%] py-[110px] flex flex-col md:flex-row justify-between border-t border-white/5 bg-surface-container-lowest dark:bg-surface-container-lowest relative z-10">
+        <div class="flex flex-col gap-6 mb-12 md:mb-0">
+            <div class="font-headline-lg text-headline-lg text-on-surface dark:text-on-surface uppercase">
+                KETU STUDIO
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                Engineering excellence in commercial interior design. Pan India Operations. One-stop solution for luxury workspace needs.
+            </p>
+            <p class="font-label-sm text-label-sm text-outline mt-auto uppercase tracking-widest">
+                © 2024 Ketu Design Studio. Engineering Excellence.
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Navigation</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="studio.html">Studio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="portfolio.html">Portfolio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="services.html">Services</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Legal</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Terms of Service</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Careers</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Press Kit</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Javascript File -->
+    <script src="js/main.js"></script>
+
+    <!-- Page Local Script (Tabs and Calculator logic) -->
+    <script>
+        // Tab Data
+        const servicesData = [
+            {
+                title: "Spatial Engineering & Layout Strategy",
+                label: "Operational Blueprinting",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+                description: "We analyze departmental interaction metrics and traffic flow to design floor plans that optimize workplace efficiency. By locating quiet zones away from high-noise hubs, we minimize cognitive fatigue. Details include detailed flow diagrams, seating density strategies, and biophilic zone allocations.",
+                deliverable: "Seating metrics file, 2D AutoCAD blueprint, noise-isolation index mapping."
+            },
+            {
+                title: "Bespoke C-Suite Leadership Suites",
+                label: "Executive Ecosystems",
+                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80",
+                description: "The 'I Made It' Suite: Private executive territories customized to showcase corporate prestige during strategic negotiations. Uses hand-selected marble slabs, curved brushed brass frames, hidden automated bar compartments, soundproof timber lining, and discrete secondary emergency entryways.",
+                deliverable: "Material mockup box, 3D high-fidelity executive rendering, security layout outline."
+            },
+            {
+                title: "Lobbies & Grand Threshold Entryways",
+                label: "First Impressions That Stick",
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+                description: "The entryway is where your corporate narrative is instantly felt. We construct double-height, architectural statements featuring integrated LED corporate art matrices, massive natural slate backdrops, custom fragrance panels, and ergonomic concrete reception nodes.",
+                deliverable: "Circadian lighting schedule, branded logo wall execution plan, coordinate layout scale."
+            },
+            {
+                title: "Commercial Property Legacy Renovation",
+                label: "Asset Revitalization",
+                image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
+                description: "Transforming legacy assets and aging office sectors into modern centers of corporate productivity. We reinforce aging pillars, update ventilation systems to high-efficiency filtration guidelines, and open up partitioned spaces to invite natural overhead light.",
+                deliverable: "Structural load calculations, energy consumption audit, zoning adaptation map."
+            }
+        ];
+
+        // Tabs Logic
+        const tabBtns = document.querySelectorAll('.service-tab-btn');
+        const displayBox = document.getElementById('service-display-box');
+
+        function renderService(index) {
+            const data = servicesData[index];
+            if (!data) return;
+
+            displayBox.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-full md:w-1/2 aspect-[4/3] rounded-[25px] overflow-hidden border border-white/10 shadow-lg">
+                        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col gap-4">
+                        <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[3px]">${data.label}</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface leading-tight">${data.title}</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed mt-2">${data.description}</p>
+                    </div>
+                </div>
+                <div class="border-t border-white/10 pt-6 mt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span class="font-label-sm text-[10px] text-outline uppercase block mb-1">Key Deliverables</span>
+                        <span class="font-body-md text-sm text-on-surface font-light">${data.deliverable}</span>
+                    </div>
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 uppercase text-center inline-block">
+                        Query Service
+                    </a>
+                </div>
+            `;
+            
+            // Trigger animation
+            displayBox.style.opacity = 0;
+            displayBox.style.transform = 'translateY(15px)';
+            setTimeout(() => {
+                displayBox.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                displayBox.style.opacity = 1;
+                displayBox.style.transform = 'translateY(0)';
+            }, 50);
+        }
+
+        tabBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                // Update active tab buttons styling
+                tabBtns.forEach(b => {
+                    b.className = "service-tab-btn text-left p-6 rounded-[20px] bg-transparent border border-white/5 transition-all text-on-surface/50 hover:text-on-surface hover:border-white/10 uppercase font-headline-md text-xl";
+                });
+                btn.className = "service-tab-btn text-left p-6 rounded-[20px] bg-white/5 border border-white/15 transition-all text-on-surface uppercase font-headline-md text-xl";
+                
+                renderService(index);
+            });
+        });
+
+        // Initialize first service display
+        renderService(0);
+
+        // Calculator Logic
+        const rangeArea = document.getElementById('range-area');
+        const rangeHeadcount = document.getElementById('range-headcount');
+        const selectTier = document.getElementById('select-tier');
+        const selectVibe = document.getElementById('select-vibe');
+
+        const valArea = document.getElementById('val-area');
+        const valHeadcount = document.getElementById('val-headcount');
+
+        const outBudget = document.getElementById('out-budget');
+        const outTimeline = document.getElementById('out-timeline');
+        const outRevisions = document.getElementById('out-revisions');
+        const outFeature = document.getElementById('out-feature');
+
+        const featureDatabase = {
+            navy: {
+                executive: "Brushed brass corner baseboards and dark-navy oak timber wall profiles.",
+                elite: "Polished Portoro black-marble fireplace mock panels and custom brass trims.",
+                luxury: "Full-grain leather stitched desk, customized brass framing, and floating LED ceiling rings."
+            },
+            wellness: {
+                executive: "Integrated circadian lights matching outdoor solar rhythms and desktop biophilia blocks.",
+                elite: "Full vertical biological living plant wall with smart hydroponic irrigation.",
+                luxury: "CIRCADIAN circadian ceiling fixtures, air particulate sensors, and custom cork noise insulation pods."
+            },
+            brutalist: {
+                executive: "Exposed architectural grey cement wall blocks and light solid-oak slab desks.",
+                elite: "Polished concrete pillar matrices and structured raw iron grid structures.",
+                luxury: "Hand-poured seamless micro-cement floors, monolith raw granite reception counter, and giant block seating."
+            }
+        };
+
+        function calculateEstimate() {
+            const area = parseInt(rangeArea.value);
+            const headcount = parseInt(rangeHeadcount.value);
+            const tier = selectTier.value;
+            const vibe = selectVibe.value;
+
+            // Updates sliders display text
+            valArea.textContent = `${area.toLocaleString()} sq ft`;
+            valHeadcount.textContent = `${headcount} Employees`;
+
+            // Calculate Base Cost per Sq Ft
+            let rate = 3500;
+            let revisions = "3 Cycles";
+            if (tier === 'elite') {
+                rate = 5500;
+                revisions = "6 Cycles";
+            } else if (tier === 'luxury') {
+                rate = 7500;
+                revisions = "Unlimited";
+            }
+
+            const rawCost = area * rate;
+            const lowCost = rawCost * 0.95;
+            const highCost = rawCost * 1.05;
+
+            // Format Indian Rupee (Lakh/Crore)
+            function formatRupee(amount) {
+                if (amount >= 10000000) {
+                    return `₹${(amount / 10000000).toFixed(2)} Crore`;
+                } else {
+                    return `₹${(amount / 100000).toFixed(1)} Lakh`;
+                }
+            }
+
+            outBudget.textContent = `${formatRupee(lowCost)} - ${formatRupee(highCost)}`;
+
+            // Calculate Timeline (Weeks)
+            let baseWeeks = 6;
+            if (area > 10000) baseWeeks = 10;
+            if (area > 25000) baseWeeks = 14;
+            if (tier === 'luxury') baseWeeks += 3; // Luxury finishes take longer
+
+            outTimeline.textContent = `${baseWeeks - 1} - ${baseWeeks + 2} Weeks`;
+            outRevisions.textContent = revisions;
+
+            // Set Feature recommendation text
+            outFeature.textContent = featureDatabase[vibe][tier];
+        }
+
+        // Add event listeners
+        rangeArea.addEventListener('input', calculateEstimate);
+        rangeHeadcount.addEventListener('input', calculateEstimate);
+        selectTier.addEventListener('change', calculateEstimate);
+        selectVibe.addEventListener('change', calculateEstimate);
+
+        // Run on initial load
+        calculateEstimate();
+
+        // Lead capture redirect
+        document.getElementById('btn-request-proposal').addEventListener('click', () => {
+            const estimateData = {
+                area: rangeArea.value,
+                headcount: rangeHeadcount.value,
+                tier: selectTier.options[selectTier.selectedIndex].text,
+                vibe: selectVibe.options[selectVibe.selectedIndex].text,
+                budget: outBudget.textContent,
+                timeline: outTimeline.textContent
+            };
+
+            // Save in localStorage for contact page
+            localStorage.setItem('ketu_proposal_estimate', JSON.stringify(estimateData));
+            
+            // Redirect to contact page
+            document.body.classList.add('page-exit');
+            setTimeout(() => {
+                window.location.href = 'contact.html';
+            }, 400);
+        });
+    </script>
+</body>
+</html>
