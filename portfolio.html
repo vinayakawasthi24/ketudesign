@@ -1,526 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Ketu Studio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- DESIGN TOKENS & RESET --- */
-        :root {
-            --bg-dark: #030e22;
-            --bg-light: #ffffff;
-            --text-dark: #030e22;
-            --text-light: #ffffff;
-            --text-muted: #7a8aa0;
-            --accent-gold: #d4c3a3;
-            --accent-gold-hover: #c4b393;
-            --font-serif: 'Cinzel', serif;
-            --font-sans: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        /* --- NAVIGATION BAR --- */
-        header {
-            background-color: var(--bg-dark);
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            color: var(--text-light);
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        nav .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
-
-        nav .nav-links a {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-        }
-
-        nav .nav-links a:hover, nav .nav-links a.active {
-            color: var(--text-light);
-        }
-
-        .btn-nav {
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            padding: 10px 20px;
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .btn-nav:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark);
-        }
-
-        /* --- HERO SECTION --- */
-        .portfolio-hero {
-            background-color: var(--bg-dark);
-            background-image: linear-gradient(rgba(3, 14, 34, 0.85), rgba(3, 14, 34, 0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 8% 80px 8%;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .portfolio-hero h1 {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .portfolio-hero p {
-            color: var(--accent-gold);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-        }
-
-        /* --- FILTER CONTROLS --- */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 40px 8% 20px 8%;
-            background-color: var(--bg-light);
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: none;
-            border: 1px solid #e0e0e0;
-            padding: 10px 24px;
-            font-family: var(--font-sans);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            color: #555;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            border-color: var(--bg-dark);
-        }
-
-        /* --- PORTFOLIO GRID --- */
-        .portfolio-container {
-            padding: 20px 8% 100px 8%;
-            background-color: var(--bg-light);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .portfolio-card {
-            background: #ffffff;
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image-wrapper {
-            width: 100%;
-            height: 400px;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-card:hover .card-image-wrapper img {
-            transform: scale(1.04);
-        }
-
-        .card-info {
-            padding: 25px 5px 10px 5px;
-        }
-
-        .card-category {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .card-title {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            line-height: 1.3;
-        }
-
-        /* --- CALL TO ACTION (CTA) SECTION --- */
-        .cta-section {
-            background-color: var(--bg-light);
-            padding: 80px 8%;
-            text-align: center;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .cta-section h2 {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 25px;
-        }
-
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark);
-            padding: 16px 40px;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-radius: 30px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(212, 195, 163, 0.2);
-        }
-
-        .btn-gold:hover {
-            background-color: var(--accent-gold-hover);
-        }
-
-        /* --- TRUSTED BY / BRANDS --- */
-        .brands-section {
-            background-color: var(--bg-dark);
-            padding: 50px 8%;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .brands-title {
-            color: rgba(255,255,255,0.3);
-            text-align: center;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .brands-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .brand-item {
-            color: rgba(255, 255, 255, 0.4);
-            font-family: var(--font-serif);
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--bg-dark);
-            padding: 80px 8% 40px 8%;
-            color: var(--text-light);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-about h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            max-width: 380px;
-            line-height: 1.6;
-        }
-
-        .footer-links h4 {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            text-transform: capitalize;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--text-light);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.2);
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 968px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .brands-grid {
-                justify-content: center;
-                gap: 40px;
-            }
-            .portfolio-hero h1 {
-                font-size: 2.5rem;
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio - Ketu Studio | Corporate Architectural Monuments</title>
+    <!-- Tailwind CSS with Forms and Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Playfair Display and Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Custom Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#670020",
+                        "surface-container-lowest": "#020d26",
+                        "secondary-fixed": "#ffd9dc",
+                        "surface-tint": "#b1c5ff",
+                        "surface-container": "#131f38",
+                        "soft-pink": "#FFD6E7",
+                        "royal-blue": "#2B56F5",
+                        "surface": "#06132c",
+                        "tertiary-container": "#004957",
+                        "off-white": "#FAFAFA",
+                        "inverse-surface": "#d9e2ff",
+                        "outline": "#8e909d",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary-container": "#ff9da8",
+                        "secondary-container": "#8c1b36",
+                        "surface-dim": "#06132c",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-tertiary-container": "#37bedb",
+                        "primary-container": "#0b3d91",
+                        "surface-container-highest": "#29344f",
+                        "on-error": "#690005",
+                        "secondary": "#ffb2ba",
+                        "on-primary-fixed-variant": "#144296",
+                        "on-surface-variant": "#c4c6d3",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "on-primary-container": "#8dadff",
+                        "tertiary-fixed-dim": "#58d6f4",
+                        "secondary-fixed-dim": "#ffb2ba",
+                        "on-surface": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#891834",
+                        "on-background": "#d9e2ff",
+                        "champagne-gold": "#D8C3A5",
+                        "background": "#06132c",
+                        "on-primary": "#002c71",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary-fixed": "#400010",
+                        "outline-variant": "#434652",
+                        "inverse-on-surface": "#24304a",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#003640",
+                        "inverse-primary": "#345baf",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-variant": "#29344f",
+                        "surface-container-high": "#1e2a43",
+                        "tertiary-fixed": "#adecff",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#2d3953",
+                        "primary": "#b1c5ff",
+                        "surface-container-low": "#0e1b34",
+                        "tertiary": "#58d6f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-lg": "130px",
+                        "section-v-md": "110px",
+                        "gutter-grid": "30px",
+                        "container-margin": "8%",
+                        "gap-component": "20px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["54px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.9", "fontWeight": "400"}],
+                        "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "4px", "fontWeight": "600"}],
+                        "headline-lg": ["74px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "body-lg": ["22px", {"lineHeight": "1.8", "fontWeight": "300"}],
+                        "headline-md": ["34px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "500"}],
+                        "display-hero": ["92px", {"lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
             }
         }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 5%;
-            }
-            nav .nav-links {
-                display: none; /* Simplification for code representation */
-            }
-            .portfolio-filters {
-                gap: 8px;
-            }
-            .filter-btn {
-                padding: 8px 16px;
-                font-size: 0.65rem;
-            }
-        }
-    </style>
+    </script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body class="relative min-h-screen cursor-none selection:bg-primary selection:text-on-primary">
+    <!-- Ambient Radial Glow and Custom Cursor (Synchronized globally) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="custom-cursor" id="customCursor"></div>
 
-    <header>
-        <div class="logo">KETU STUDIO</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Studio</a></li>
-                <li><a href="#" class="active">Portfolio</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Insights</a></li>
-            </ul>
-        </nav>
-        <a href="#" class="btn-nav">Book Consultation</a>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[8%] py-6 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 hover-interactive">
+        <a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">
+            KETU STUDIO
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="studio.html">Studio</a>
+            <a class="text-on-surface text-label-caps font-label-caps border-b border-champagne-gold pb-1 transition-colors duration-500 uppercase" href="portfolio.html">Portfolio</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="insights.html">Insights</a>
+        </div>
+        <a href="call.html" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
+            Book Consultation
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden text-on-surface hover-interactive">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <header class="relative w-full h-[50vh] flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
+        <div class="absolute inset-0 z-0">
+            <img alt="Luxury Office Interior" class="w-full h-full object-cover opacity-40 scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-surface"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-5xl text-center flex flex-col items-center gap-4 gsap-reveal">
+            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px]">Case Studies</span>
+            <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface tracking-tighter">
+                Monuments of Ambition.
+            </h1>
+        </div>
     </header>
 
-    <section class="portfolio-hero">
-        <p>Our Creations</p>
-        <h1>Workspaces That Built<br>Industry Empires.</h1>
-    </section>
-
-    <section class="portfolio-filters">
-        <button class="filter-btn active">All Projects</button>
-        <button class="filter-btn">Executive Suites</button>
-        <button class="filter-btn">Co-working Spaces</button>
-        <button class="filter-btn">Enterprise Offices</button>
-        <button class="filter-btn">Renovations</button>
-    </section>
-
-    <main class="portfolio-container">
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Spatial Strategy">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Spatial Strategy & Design</div>
-                    <h3 class="card-title">The Collaborative Hub</h3>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=800&q=80" alt="Executive Suite">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Executive Architecture</div>
-                    <h3 class="card-title">The "I Made It" Suite</h3>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Reception Lobby">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Lobby & Atrium Design</div>
-                    <h3 class="card-title">First Impressions Lounge</h3>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Commercial Renovation">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Commercial Renovation</div>
-                    <h3 class="card-title">The Material Catalyst HQ</h3>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Modern Enterprise Office">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Enterprise Spaces</div>
-                    <h3 class="card-title">The Fintech Monolith</h3>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80" alt="Minimalist Workspace">
-                </div>
-                <div class="card-info">
-                    <div class="card-category">Bespoke Infrastructure</div>
-                    <h3 class="card-title">The Minimalist Matrix</h3>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <section class="cta-section">
-        <h2>Stop Ghosting Your Dream Office.</h2>
-        <a href="#" class="btn-gold">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right:2px;"><path d="M20 22.622l-3.521-6.795c-.008.004-.011.008-.019.012l-1.958 1.003c-.566.29-1.272.167-1.706-.296l-3.411-3.633-3.633-3.412c-.463-.435-.586-1.14-.296-1.707l1.003-1.958.012-.019-6.795-3.522c-.624-.323-1.385-.045-1.657.604l-2.008 4.795c-.322.771-.059 1.658.623 2.112l17.387 11.53c.66.438 1.54.267 2.011-.403l2.973-4.237c.39-.556.242-1.314-.302-1.614z"/></svg>
-            Call The Workspace Experts (+91 93453 17801)
-        </a>
-    </section>
-
-    <section class="brands-section">
-        <div class="brands-title">Trusted By Industry Leaders</div>
-        <div class="brands-grid">
-            <div class="brand-item">HALDIRAM</div>
-            <div class="brand-item">REEBOK</div>
-            <div class="brand-item">TECH MAHINDRA</div>
-            <div class="brand-item">TATA MOTORS</div>
+    <!-- Filters Section -->
+    <section class="w-full px-container-margin py-8 relative z-10">
+        <div class="flex flex-wrap gap-4 justify-center items-center hover-interactive">
+            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold bg-champagne-gold text-on-primary-fixed transition-all uppercase" data-filter="all">All Work</button>
+            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="tech-hq">Tech HQ</button>
+            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="c-suite">C-Suite</button>
+            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="lounges">Boutique Lounges</button>
+            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="creative">Creative Hubs</button>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>KETU STUDIO</h3>
-                <p>Engineering excellence in commercial interior design. Turnkey operations. One stop studio for luxury workspace designs.</p>
+    <!-- Bento Portfolio Grid -->
+    <section class="w-full px-container-margin py-section-v-md relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch" id="portfolio-grid">
+            <!-- Project 1 (Tech HQ - Wide) -->
+            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="tech-hq" data-project-id="1">
+                <div class="w-full aspect-[16/9] overflow-hidden relative">
+                    <img alt="The Obsidian Tower" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Tech HQ | Bengaluru</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">The Obsidian Tower</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                </ul>
+
+            <!-- Project 2 (C-Suite - Tall) -->
+            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="c-suite" data-project-id="2">
+                <div class="w-full aspect-[4/5] overflow-hidden relative">
+                    <img alt="Aether Executive Lounge" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">C-Suite | Mumbai</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">Aether Executive Lounge</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press Kit</a></li>
-                </ul>
+
+            <!-- Project 3 (Creative Hubs - Wide) -->
+            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="creative" data-project-id="3">
+                <div class="w-full aspect-[16/9] overflow-hidden relative">
+                    <img alt="Helios Creative Hub" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Creative Hubs | Delhi NCR</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">Helios Creative Hub</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
+            </div>
+
+            <!-- Project 4 (C-Suite - Standard) -->
+            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="c-suite" data-project-id="4">
+                <div class="w-full aspect-[1/1] overflow-hidden relative">
+                    <img alt="Valkyrie Boardrooms" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">C-Suite | Hyderabad</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">Valkyrie Boardrooms</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
+            </div>
+
+            <!-- Project 5 (Tech HQ - Tall) -->
+            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="tech-hq" data-project-id="5">
+                <div class="w-full aspect-[4/5] overflow-hidden relative">
+                    <img alt="Solaria Open Office" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">Tech HQ | Pune</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">Solaria Open Office</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
+            </div>
+
+            <!-- Project 6 (Boutique Lounges - Wide) -->
+            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="lounges" data-project-id="6">
+                <div class="w-full aspect-[16/9] overflow-hidden relative">
+                    <img alt="Chronos Financial Suite" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80"/>
+                </div>
+                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">Boutique Lounges | Chennai</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface">Chronos Financial Suite</h3>
+                    </div>
+                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div>&copy; 2026 Ketu Studio. All Rights Reserved.</div>
+    </section>
+
+    <!-- Fullscreen Modal Overlay (Dynamic Content Inject) -->
+    <div class="fixed inset-0 bg-surface/98 backdrop-blur-xl z-55 flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-opacity duration-500 ease-out" id="projectModal">
+        <button class="absolute top-6 right-[8%] text-on-surface hover:text-champagne-gold transition-colors hover-interactive z-56" id="closeModal">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        
+        <div class="w-full max-w-6xl max-h-[85vh] overflow-y-auto glass-card rounded-[35px] p-6 md:p-12 flex flex-col lg:flex-row gap-8 md:gap-12" id="modalContent">
+            <!-- Content will be injected dynamically via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full px-[8%] py-[110px] flex flex-col md:flex-row justify-between border-t border-white/5 bg-surface-container-lowest dark:bg-surface-container-lowest relative z-10">
+        <div class="flex flex-col gap-6 mb-12 md:mb-0">
+            <div class="font-headline-lg text-headline-lg text-on-surface dark:text-on-surface uppercase">
+                KETU STUDIO
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                Engineering excellence in commercial interior design. Pan India Operations. One-stop solution for luxury workspace needs.
+            </p>
+            <p class="font-label-sm text-label-sm text-outline mt-auto uppercase tracking-widest">
+                © 2024 Ketu Design Studio. Engineering Excellence.
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Navigation</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="studio.html">Studio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="portfolio.html">Portfolio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="services.html">Services</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Legal</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Terms of Service</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Careers</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Press Kit</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Global Javascript File -->
+    <script src="js/main.js"></script>
+    
+    <!-- Local Page Logic (Filtering and Modal) -->
+    <script>
+        // Project Database
+        const projectsData = {
+            1: {
+                title: "The Obsidian Tower",
+                category: "Tech HQ",
+                location: "Bengaluru, Karnataka",
+                area: "42,000 sq ft",
+                timeline: "14 Weeks",
+                image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+                description: "A dark-editorial workspace blueprint engineered for high-growth tech executives. Relies heavily on glass-morphism panel borders, biophilic core nodes, and smart lighting grids optimized for screen-glare reduction and collaboration flow.",
+                quote: "Ketu did not just build us an office; they created a strategic asset that has actively boosted our hiring and daily collaborations."
+            },
+            2: {
+                title: "Aether Executive Lounge",
+                category: "C-Suite",
+                location: "Mumbai, Maharashtra",
+                area: "8,500 sq ft",
+                timeline: "8 Weeks",
+                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+                description: "A secure, soundproof luxury lounge curated for leadership negotiations. Employs gold brushed trims, hand-cut grey marble walls, custom acoustic leather paneling, and an integrated private whiskey counter.",
+                quote: "The final execution is flawless. An absolute stage of corporate power and luxury. Essential for stakeholder consultations."
+            },
+            3: {
+                title: "Helios Creative Hub",
+                category: "Creative Hubs",
+                location: "Noida, Delhi NCR",
+                area: "26,000 sq ft",
+                timeline: "12 Weeks",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+                description: "Designed for a leading media and agency powerhouse. Features massive architectural height, fluid modular seating systems, active acoustic control structures, and an internal amphitheater for agency pitches.",
+                quote: "Our productivity metrics are up 34% since the move. Employees actually want to show up on weekends."
+            },
+            4: {
+                title: "Valkyrie Boardrooms",
+                category: "C-Suite",
+                location: "Gachibowli, Hyderabad",
+                area: "6,000 sq ft",
+                timeline: "6 Weeks",
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+                description: "Bespoke executive boardroom matrix featuring automation frameworks, voice-active camera pods, smart glass dividers, and a champagne-gold curved negotiation deck table.",
+                quote: "Technology and high-end design are perfectly synchronized. This is exactly what our board meetings deserved."
+            },
+            5: {
+                title: "Solaria Open Office",
+                category: "Tech HQ",
+                location: "Hinjenwadi, Pune",
+                area: "35,000 sq ft",
+                timeline: "11 Weeks",
+                image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+                description: "A biophilic, high-volume open-plan software center. Replaces traditional dense clusters with spacious pods, custom lighting schedules matching circadian rhythms, and isolated acoustic focus alcoves.",
+                quote: "A gorgeous design that respects worker boundaries. The custom focus booths are always fully booked."
+            },
+            6: {
+                title: "Chronos Financial Suite",
+                category: "Boutique Lounges",
+                location: "OMR, Chennai",
+                area: "14,000 sq ft",
+                timeline: "9 Weeks",
+                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+                description: "Designed for an elite wealth management group. We chose deep naval and off-white styling, creating an environment of stable legacy, premium detail alignment, and secure privacy channels.",
+                quote: "Our clients are continuously wowed. The entrance feels like stepping into a private banking vault in Geneva."
+            }
+        };
+
+        // Filter Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterButtons.forEach(b => {
+                    b.className = "filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase";
+                });
+                
+                // Add active style to this button
+                btn.className = "filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold bg-champagne-gold text-on-primary-fixed transition-all uppercase";
+                
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || itemCategory === filterValue) {
+                        item.style.display = 'flex';
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => { item.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('projectModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalContent = document.getElementById('modalContent');
+
+        projectItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const projectId = item.getAttribute('data-project-id');
+                const data = projectsData[projectId];
+                if (!data) return;
+
+                // Inject content
+                modalContent.innerHTML = `
+                    <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                        <div class="w-full aspect-[4/3] rounded-[25px] overflow-hidden border border-white/10 shadow-lg">
+                            <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-1 bg-white/5 border border-white/10 rounded-[20px] p-4 text-center">
+                                <span class="font-label-sm text-[10px] text-outline block mb-1 uppercase">Area</span>
+                                <span class="font-headline-md text-xl text-on-surface">${data.area}</span>
+                            </div>
+                            <div class="flex-1 bg-white/5 border border-white/10 rounded-[20px] p-4 text-center">
+                                <span class="font-label-sm text-[10px] text-outline block mb-1 uppercase">Timeline</span>
+                                <span class="font-headline-md text-xl text-on-surface">${data.timeline}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex flex-col justify-between gap-8">
+                        <div>
+                            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[3px] block mb-2">${data.category}</span>
+                            <h2 class="font-headline-lg-mobile md:font-headline-md text-3xl md:text-5xl text-on-surface leading-tight mb-4">${data.title}</h2>
+                            <p class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] mb-6">${data.location}</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">${data.description}</p>
+                        </div>
+                        <div class="border-t border-white/10 pt-6">
+                            <span class="material-symbols-outlined text-champagne-gold text-3xl opacity-40 block mb-2">format_quote</span>
+                            <p class="font-body-md text-body-md text-on-surface italic font-light">${data.quote}</p>
+                        </div>
+                    </div>
+                `;
+
+                // Show modal
+                modal.classList.remove('pointer-events-none', 'opacity-0');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeProjectModal() {
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            document.body.style.overflow = '';
+        }
+
+        closeModal.addEventListener('click', closeProjectModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+    </script>
 </body>
 </html>

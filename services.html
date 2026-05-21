@@ -117,23 +117,33 @@
     <div class="custom-cursor" id="customCursor"></div>
 
     <!-- TopNavBar -->
-    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[8%] py-6 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 hover-interactive">
-        <a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">
-            KETU STUDIO
-        </a>
-        <div class="hidden md:flex gap-8 items-center">
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="studio.html">Studio</a>
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="portfolio.html">Portfolio</a>
-            <a class="text-on-surface text-label-caps font-label-caps border-b border-champagne-gold pb-1 transition-colors duration-500 uppercase" href="services.html">Services</a>
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="insights.html">Insights</a>
-        </div>
-        <a href="contact.html" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
-            Book Consultation
-        </a>
-        <button id="mobileMenuBtn" class="md:hidden text-on-surface hover-interactive">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
-    </nav>
+   <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-16 lg:px-24 py-4 bg-[#131D3B]/90 backdrop-blur-md border-b border-white/10 font-sans">
+  
+  <div class="flex items-center justify-start py-1">
+    <img 
+      src="img/ketu design studio logo white.png" 
+      alt="KETU DESIGN STUDIO" 
+      class="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-102 hover-interactive"
+    />
+  </div>
+
+  <div class="hidden md:flex gap-8 items-center">
+    <a href="studio.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Studio</a>
+    <a href="portfolio.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Portfolio</a>
+    <a href="services.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Services</a>
+    <a href="insights.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Insights</a>
+  </div>
+
+  <button onclick="window.location.href='call.html';" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-[#0E34A6] text-white text-xs uppercase tracking-widest font-bold hover:bg-white hover:text-[#131D3B] transition-all duration-500 hover:scale-105 hover-interactive">
+    Book Consultation
+  </button>
+
+  <button class="md:hidden text-white hover-interactive p-2" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+</nav>
 
     <!-- Services Hero -->
     <header class="relative w-full h-[50vh] flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
