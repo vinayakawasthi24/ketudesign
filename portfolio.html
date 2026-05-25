@@ -1,453 +1,323 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Portfolio - Ketu Studio | Corporate Architectural Monuments</title>
-    <!-- Tailwind CSS with Forms and Container Queries -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <!-- Playfair Display and Inter Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-    <!-- Tailwind Custom Configuration -->
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary": "#670020",
-                        "surface-container-lowest": "#020d26",
-                        "secondary-fixed": "#ffd9dc",
-                        "surface-tint": "#b1c5ff",
-                        "surface-container": "#131f38",
-                        "soft-pink": "#FFD6E7",
-                        "royal-blue": "#2B56F5",
-                        "surface": "#06132c",
-                        "tertiary-container": "#004957",
-                        "off-white": "#FAFAFA",
-                        "inverse-surface": "#d9e2ff",
-                        "outline": "#8e909d",
-                        "primary-fixed": "#dae2ff",
-                        "on-secondary-container": "#ff9da8",
-                        "secondary-container": "#8c1b36",
-                        "surface-dim": "#06132c",
-                        "on-tertiary-fixed": "#001f26",
-                        "on-tertiary-container": "#37bedb",
-                        "primary-container": "#0b3d91",
-                        "surface-container-highest": "#29344f",
-                        "on-error": "#690005",
-                        "secondary": "#ffb2ba",
-                        "on-primary-fixed-variant": "#144296",
-                        "on-surface-variant": "#c4c6d3",
-                        "on-tertiary-fixed-variant": "#004e5d",
-                        "on-primary-container": "#8dadff",
-                        "tertiary-fixed-dim": "#58d6f4",
-                        "secondary-fixed-dim": "#ffb2ba",
-                        "on-surface": "#d9e2ff",
-                        "on-secondary-fixed-variant": "#891834",
-                        "on-background": "#d9e2ff",
-                        "champagne-gold": "#D8C3A5",
-                        "background": "#06132c",
-                        "on-primary": "#002c71",
-                        "on-primary-fixed": "#001947",
-                        "on-secondary-fixed": "#400010",
-                        "outline-variant": "#434652",
-                        "inverse-on-surface": "#24304a",
-                        "error-container": "#93000a",
-                        "on-tertiary": "#003640",
-                        "inverse-primary": "#345baf",
-                        "error": "#ffb4ab",
-                        "primary-fixed-dim": "#b1c5ff",
-                        "surface-variant": "#29344f",
-                        "surface-container-high": "#1e2a43",
-                        "tertiary-fixed": "#adecff",
-                        "on-error-container": "#ffdad6",
-                        "surface-bright": "#2d3953",
-                        "primary": "#b1c5ff",
-                        "surface-container-low": "#0e1b34",
-                        "tertiary": "#58d6f4"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "section-v-lg": "130px",
-                        "section-v-md": "110px",
-                        "gutter-grid": "30px",
-                        "container-margin": "8%",
-                        "gap-component": "20px"
-                    },
-                    "fontFamily": {
-                        "display-hero-mobile": ["Playfair Display"],
-                        "body-md": ["Inter"],
-                        "label-caps": ["Inter"],
-                        "headline-lg": ["Playfair Display"],
-                        "body-lg": ["Inter"],
-                        "headline-md": ["Playfair Display"],
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "label-sm": ["Inter"],
-                        "display-hero": ["Playfair Display"]
-                    },
-                    "fontSize": {
-                        "display-hero-mobile": ["54px", {"lineHeight": "1.0", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.9", "fontWeight": "400"}],
-                        "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "4px", "fontWeight": "600"}],
-                        "headline-lg": ["74px", {"lineHeight": "1.0", "fontWeight": "600"}],
-                        "body-lg": ["22px", {"lineHeight": "1.8", "fontWeight": "300"}],
-                        "headline-md": ["34px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
-                        "label-sm": ["10px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "500"}],
-                        "display-hero": ["92px", {"lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite Workspace Portfolio | Ketu Design Studio</title>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body class="relative min-h-screen cursor-none selection:bg-primary selection:text-on-primary">
-    <!-- Ambient Radial Glow and Custom Cursor (Synchronized globally) -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="custom-cursor" id="customCursor"></div>
+<body class="portfolio-page">
 
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[8%] py-6 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 hover-interactive">
-        <a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">
-            KETU STUDIO
-        </a>
-        <div class="hidden md:flex gap-8 items-center">
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="studio.html">Studio</a>
-            <a class="text-on-surface text-label-caps font-label-caps border-b border-champagne-gold pb-1 transition-colors duration-500 uppercase" href="portfolio.html">Portfolio</a>
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="services.html">Services</a>
-            <a class="text-on-surface/70 font-label-caps text-label-caps hover:text-on-surface transition-colors hover:scale-105 duration-500 uppercase" href="insights.html">Insights</a>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Ketu Design Studio" />
+            </a>
         </div>
-        <a href="call.html" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-champagne-gold text-on-primary-fixed font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
-            Book Consultation
-        </a>
-        <button id="mobileMenuBtn" class="md:hidden text-on-surface hover-interactive">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">STUDIO</a></li>
+            <li class="active"><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="services (1).html">SERVICES</a></li>
+            <li><a href="whyus.html">WHY US</a></li>
+            <li><a href="insights.html">INSIGHTS</a></li>
+        </ul>
+            <div class="nav-cta">
+                <a href="contact.html" class="consultation-btn-nav">BOOK CONSULTATION</a>
+            </div>
     </nav>
 
-    <!-- Portfolio Hero -->
-    <header class="relative w-full h-[50vh] flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
-        <div class="absolute inset-0 z-0">
-            <img alt="Luxury Office Interior" class="w-full h-full object-cover opacity-40 scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80"/>
-            <div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-surface"></div>
-        </div>
-        <div class="relative z-10 w-full max-w-5xl text-center flex flex-col items-center gap-4 gsap-reveal">
-            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px]">Case Studies</span>
-            <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface tracking-tighter">
-                Monuments of Ambition.
-            </h1>
+    <!-- Floating Mobile/Tablet Consultation Trigger -->
+    <a href="contact.html" class="floating-consultation-btn">Book a Consultation</a>
+
+    <!-- Page Banner -->
+    <header class="page-banner">
+        <div class="page-banner-content">
+            <span class="badge badge-light">ARCHITECTURAL SHOWCASE</span>
+            <h1>Workspaces Built For High-Performing Teams</h1>
+            <p>A curated retrospective of our luxury spatial design and turnkey office transformation projects across the country.</p>
         </div>
     </header>
 
-    <!-- Filters Section -->
-    <section class="w-full px-container-margin py-8 relative z-10">
-        <div class="flex flex-wrap gap-4 justify-center items-center hover-interactive">
-            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold bg-champagne-gold text-on-primary-fixed transition-all uppercase" data-filter="all">All Work</button>
-            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="tech-hq">Tech HQ</button>
-            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="c-suite">C-Suite</button>
-            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="lounges">Boutique Lounges</button>
-            <button class="filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase" data-filter="creative">Creative Hubs</button>
+    <!-- Project Showcase Section -->
+    <section class="page-section">
+        <div class="page-container-large">
+            
+            <!-- Project 1: Tech Mahindra -->
+            <div class="project-showcase-block slide-in-left">
+                <div class="project-info-side">
+                    <span class="project-tag">Corporate Headquarters</span>
+                    <h2>Tech Mahindra Innovation Suite</h2>
+                    <p class="project-description">
+                        "Ketu didn't just build an office; they built a stage for our best work." Our primary objective was to replace cellular cubicle systems with dynamic, highly agile collaborative zones designed to maximize cross-department synergy and employee engagement.
+                    </p>
+                    <div class="project-stats-grid">
+                        <div class="project-stat-pill">
+                            <h4>45,000 sq ft</h4>
+                            <p>Spatial Footprint</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>Gurugram, HR</h4>
+                            <p>Location</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>400+ Employees</h4>
+                            <p>Optimized Synergy</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>Acoustic Glass</h4>
+                            <p>Key Material Spec</p>
+                        </div>
+                    </div>
+                    <a href="tel:+918398801801" class="btn btn-filled">CONTACT FOR DETAILS</a>
+                </div>
+                <div class="project-media-side">
+                    <img 
+    src="project_tech_mahindra_1779554113121.png" 
+    alt="Tech Mahindra Innovation Suite" 
+    class="project-image"
+    style="width:88%; margin:auto; display:block;"
+/>
+                </div>
+            </div>
+
+            <!-- Project 2: Reebok -->
+            <div class="project-showcase-block">
+                <div class="project-info-side">
+                    <span class="project-tag">Executive C-Suite</span>
+                    <h2>Reebok 'I Made It' Executive Wing</h2>
+                    <p class="project-description">
+                        An elite corporate suite designed to express corporate power, modern luxury, and design excellence. Features sustainable walnut panels, custom leather boardroom seats, and intelligent ambient lighting adjustments designed to comfort minds and frame big quarterly projections.
+                    </p>
+                    <div class="project-stats-grid">
+                        <div class="project-stat-pill">
+                            <h4>12,500 sq ft</h4>
+                            <p>Spatial Footprint</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>New Delhi, DL</h4>
+                            <p>Location</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>Premium Walnut</h4>
+                            <p>Material Cladding</p>
+                        </div>
+                        <div class="project-stat-pill">
+                            <h4>Smart Lighting</h4>
+                            <p>Automation System</p>
+                        </div>
+                    </div>
+                    <a href="tel:+918398801801" class="btn btn-filled">CONTACT FOR DETAILS</a>
+                </div>
+                <div class="project-media-side">
+                    <img 
+    src="project_reebok_1779554676562.png" 
+    alt="Reebok Executive Suite" 
+    class="project-image"
+    style="width:88%; margin:auto; display:block;"
+/>
+                </div>
+            </div>
+
+            <!-- Project 3: Haldiram -->
+            <div class="project-showcase-block">
+
+    <div class="project-info-side">
+
+        <span class="project-tag">
+            Corporate Lounge & Dining
+        </span>
+
+        <h2>
+            Haldiram Premium Amenity Lounge
+        </h2>
+
+        <p class="project-description">
+            A beautiful wellness café, reception hub, and private discussion zone designed to make deep impressions on incoming VIP clients. Merges high-end glassmorphism partitions with living plant walls to optimize visual calmness and employee health.
+        </p>
+
+        <div class="project-stats-grid">
+
+            <div class="project-stat-pill">
+                <h4>18,000 sq ft</h4>
+                <p>Spatial Footprint</p>
+            </div>
+
+            <div class="project-stat-pill">
+                <h4>Noida, UP</h4>
+                <p>Location</p>
+            </div>
+
+            <div class="project-stat-pill">
+                <h4>Living Green Wall</h4>
+                <p>Acoustic Dampening</p>
+            </div>
+
+            <div class="project-stat-pill">
+                <h4>5-Star Cafeteria</h4>
+                <p>Employee Amenity</p>
+            </div>
+
         </div>
-    </section>
 
-    <!-- Bento Portfolio Grid -->
-    <section class="w-full px-container-margin py-section-v-md relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch" id="portfolio-grid">
-            <!-- Project 1 (Tech HQ - Wide) -->
-            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="tech-hq" data-project-id="1">
-                <div class="w-full aspect-[16/9] overflow-hidden relative">
-                    <img alt="The Obsidian Tower" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Tech HQ | Bengaluru</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">The Obsidian Tower</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
+        <a href="tel:+918398801801" class="btn btn-filled">
+            CONTACT FOR DETAILS
+        </a>
 
-            <!-- Project 2 (C-Suite - Tall) -->
-            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="c-suite" data-project-id="2">
-                <div class="w-full aspect-[4/5] overflow-hidden relative">
-                    <img alt="Aether Executive Lounge" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">C-Suite | Mumbai</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">Aether Executive Lounge</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
-
-            <!-- Project 3 (Creative Hubs - Wide) -->
-            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="creative" data-project-id="3">
-                <div class="w-full aspect-[16/9] overflow-hidden relative">
-                    <img alt="Helios Creative Hub" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-[2px] block mb-2">Creative Hubs | Delhi NCR</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">Helios Creative Hub</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
-
-            <!-- Project 4 (C-Suite - Standard) -->
-            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="c-suite" data-project-id="4">
-                <div class="w-full aspect-[1/1] overflow-hidden relative">
-                    <img alt="Valkyrie Boardrooms" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">C-Suite | Hyderabad</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">Valkyrie Boardrooms</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
-
-            <!-- Project 5 (Tech HQ - Tall) -->
-            <div class="project-item md:col-span-4 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="tech-hq" data-project-id="5">
-                <div class="w-full aspect-[4/5] overflow-hidden relative">
-                    <img alt="Solaria Open Office" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">Tech HQ | Pune</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">Solaria Open Office</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
-
-            <!-- Project 6 (Boutique Lounges - Wide) -->
-            <div class="project-item md:col-span-8 glass-card rounded-[35px] overflow-hidden group hover-interactive gsap-reveal flex flex-col justify-between" data-category="lounges" data-project-id="6">
-                <div class="w-full aspect-[16/9] overflow-hidden relative">
-                    <img alt="Chronos Financial Suite" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80"/>
-                </div>
-                <div class="p-8 mt-auto flex justify-between items-end border-t border-white/5">
-                    <div>
-                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] block mb-2">Boutique Lounges | Chennai</span>
-                        <h3 class="font-headline-md text-2xl text-on-surface">Chronos Financial Suite</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-champagne-gold text-4xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fullscreen Modal Overlay (Dynamic Content Inject) -->
-    <div class="fixed inset-0 bg-surface/98 backdrop-blur-xl z-55 flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-opacity duration-500 ease-out" id="projectModal">
-        <button class="absolute top-6 right-[8%] text-on-surface hover:text-champagne-gold transition-colors hover-interactive z-56" id="closeModal">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        
-        <div class="w-full max-w-6xl max-h-[85vh] overflow-y-auto glass-card rounded-[35px] p-6 md:p-12 flex flex-col lg:flex-row gap-8 md:gap-12" id="modalContent">
-            <!-- Content will be injected dynamically via JavaScript -->
-        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="w-full px-[8%] py-[110px] flex flex-col md:flex-row justify-between border-t border-white/5 bg-surface-container-lowest dark:bg-surface-container-lowest relative z-10">
-        <div class="flex flex-col gap-6 mb-12 md:mb-0">
-            <div class="font-headline-lg text-headline-lg text-on-surface dark:text-on-surface uppercase">
-                KETU STUDIO
+    <!-- IMAGE SIDE -->
+
+    <div class="project-media-side">
+
+        <img 
+    src="second.png"
+    alt="Haldiram Premium Lounge"
+    class="project-main-image"
+    style="width:88%; height:88%; margin:auto; display:block;"
+>
+
+    </div>
+
+</div>
+            <!-- Project 4: Tata Motors -->
+            <div class="project-showcase-block">
+    
+    <div class="project-info-side">
+
+        <span class="project-tag">Automotive Corporate Office</span>
+
+        <h2>Tata Motors Corporate Hub</h2>
+
+        <p class="project-description">
+            A dynamic, high-tech command center and data-driven workspace engineered to promote innovation and match fast corporate operations. Features modern slate flooring, polished steel textures, and high-efficiency workflow routing.
+        </p>
+
+        <div class="project-stats-grid">
+
+            <div class="project-stat-pill">
+                <h4>60,000 sq ft</h4>
+                <p>Spatial Footprint</p>
             </div>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
-                Engineering excellence in commercial interior design. Pan India Operations. One-stop solution for luxury workspace needs.
-            </p>
-            <p class="font-label-sm text-label-sm text-outline mt-auto uppercase tracking-widest">
-                © 2024 Ketu Design Studio. Engineering Excellence.
-            </p>
+
+            <div class="project-stat-pill">
+                <h4>Pune, MH</h4>
+                <p>Location</p>
+            </div>
+
+            <div class="project-stat-pill">
+                <h4>Polished Slate</h4>
+                <p>Flooring Spec</p>
+            </div>
+
+            <div class="project-stat-pill">
+                <h4>500+ Nodes</h4>
+                <p>Data Infrastructure</p>
+            </div>
+
         </div>
-        <div class="flex flex-col md:flex-row gap-12 md:gap-24">
-            <div class="flex flex-col gap-4">
-                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Navigation</span>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="studio.html">Studio</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="portfolio.html">Portfolio</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="services.html">Services</a>
+
+        <a href="tel:+918398801801" class="btn btn-filled">
+            CONTACT FOR DETAILS
+        </a>
+
+    </div>
+
+    <!-- IMAGE SIDE -->
+
+    <div class="project-media-side">
+
+        <img 
+            src="first.png" 
+            alt="Tata Motors Corporate Hub"
+            class="project-main-image"
+        >
+
+    </div>
+
+</div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Corporate Workspace?</h2>
+            <p>Connect with our expert design partners to draft your space roadmap and discover design that drives ROI.</p>
+            <div class="cta-buttons">
+                <a href="tel:+918398801801" class="btn btn-filled">CONTACT US</a>
+                <a href="services.html" class="btn btn-outlined">VIEW OUR SERVICES</a>
             </div>
-            <div class="flex flex-col gap-4">
-                <span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Legal</span>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Privacy Policy</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Terms of Service</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Careers</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Press Kit</a>
+        </div>
+    </section>
+
+    <!-- Expanded Premium Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand-col">
+                <img src="logo.png" alt="Ketu Design Studio" class="footer-logo" />
+                <p class="brand-pitch">
+                    Transforming workspace architecture into elite environments of productivity, innovation, and corporate prestige.
+                </p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LN</a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">IG</a>
+                    <a href="tel:+918398801801" aria-label="Phone">PH</a>
+                </div>
+            </div>
+            
+            <div class="footer-links-col">
+                <h3>Quick Nav</h3>
+                <ul>
+                    <li><a href="index.html">Studio</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h3>Our Core Services</h3>
+                <ul>
+                    <li><a href="services.html#strategy">Corporate Space Strategy</a></li>
+                    <li><a href="services.html#architecture">Bespoke Office Architecture</a></li>
+                    <li><a href="services.html#suites">C-Suite Executive Design</a></li>
+                    <li><a href="services.html#amenities">Luxury Amenity Planning</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-col">
+                <h3>Headquarters</h3>
+                <p class="footer-address">
+                    Ketu Design Studio,<br>
+                    VATIKA BUSINESS PARK,<br>
+                    Badshahpur Sohna Rd, Block W,<br>
+                    Sector 49, Gurugram, Haryana 122018
+                </p>
+                <p class="footer-phone">
+                    <strong>Phone:</strong> <a href="tel:+918398801801">+91 83988 01801</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ketu Design Studio. Smart Designs | Seamless Execution. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="contact.html">Contact Form</a>
+                <span class="bullet">&bull;</span>
+                <a href="#">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- Global Javascript File -->
-    <script src="js/main.js"></script>
-    
-    <!-- Local Page Logic (Filtering and Modal) -->
-    <script>
-        // Project Database
-        const projectsData = {
-            1: {
-                title: "The Obsidian Tower",
-                category: "Tech HQ",
-                location: "Bengaluru, Karnataka",
-                area: "42,000 sq ft",
-                timeline: "14 Weeks",
-                image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
-                description: "A dark-editorial workspace blueprint engineered for high-growth tech executives. Relies heavily on glass-morphism panel borders, biophilic core nodes, and smart lighting grids optimized for screen-glare reduction and collaboration flow.",
-                quote: "Ketu did not just build us an office; they created a strategic asset that has actively boosted our hiring and daily collaborations."
-            },
-            2: {
-                title: "Aether Executive Lounge",
-                category: "C-Suite",
-                location: "Mumbai, Maharashtra",
-                area: "8,500 sq ft",
-                timeline: "8 Weeks",
-                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-                description: "A secure, soundproof luxury lounge curated for leadership negotiations. Employs gold brushed trims, hand-cut grey marble walls, custom acoustic leather paneling, and an integrated private whiskey counter.",
-                quote: "The final execution is flawless. An absolute stage of corporate power and luxury. Essential for stakeholder consultations."
-            },
-            3: {
-                title: "Helios Creative Hub",
-                category: "Creative Hubs",
-                location: "Noida, Delhi NCR",
-                area: "26,000 sq ft",
-                timeline: "12 Weeks",
-                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-                description: "Designed for a leading media and agency powerhouse. Features massive architectural height, fluid modular seating systems, active acoustic control structures, and an internal amphitheater for agency pitches.",
-                quote: "Our productivity metrics are up 34% since the move. Employees actually want to show up on weekends."
-            },
-            4: {
-                title: "Valkyrie Boardrooms",
-                category: "C-Suite",
-                location: "Gachibowli, Hyderabad",
-                area: "6,000 sq ft",
-                timeline: "6 Weeks",
-                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-                description: "Bespoke executive boardroom matrix featuring automation frameworks, voice-active camera pods, smart glass dividers, and a champagne-gold curved negotiation deck table.",
-                quote: "Technology and high-end design are perfectly synchronized. This is exactly what our board meetings deserved."
-            },
-            5: {
-                title: "Solaria Open Office",
-                category: "Tech HQ",
-                location: "Hinjenwadi, Pune",
-                area: "35,000 sq ft",
-                timeline: "11 Weeks",
-                image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
-                description: "A biophilic, high-volume open-plan software center. Replaces traditional dense clusters with spacious pods, custom lighting schedules matching circadian rhythms, and isolated acoustic focus alcoves.",
-                quote: "A gorgeous design that respects worker boundaries. The custom focus booths are always fully booked."
-            },
-            6: {
-                title: "Chronos Financial Suite",
-                category: "Boutique Lounges",
-                location: "OMR, Chennai",
-                area: "14,000 sq ft",
-                timeline: "9 Weeks",
-                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-                description: "Designed for an elite wealth management group. We chose deep naval and off-white styling, creating an environment of stable legacy, premium detail alignment, and secure privacy channels.",
-                quote: "Our clients are continuously wowed. The entrance feels like stepping into a private banking vault in Geneva."
-            }
-        };
-
-        // Filter Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectItems = document.querySelectorAll('.project-item');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active styling from all buttons
-                filterButtons.forEach(b => {
-                    b.className = "filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold border border-white/20 text-on-surface hover:bg-white/10 transition-all uppercase";
-                });
-                
-                // Add active style to this button
-                btn.className = "filter-btn px-6 py-3 rounded-full font-label-caps text-label-caps font-bold bg-champagne-gold text-on-primary-fixed transition-all uppercase";
-                
-                const filterValue = btn.getAttribute('data-filter');
-
-                projectItems.forEach(item => {
-                    const itemCategory = item.getAttribute('data-category');
-                    if (filterValue === 'all' || itemCategory === filterValue) {
-                        item.style.display = 'flex';
-                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.95)';
-                        setTimeout(() => { item.style.display = 'none'; }, 300);
-                    }
-                });
-            });
-        });
-
-        // Modal Logic
-        const modal = document.getElementById('projectModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalContent = document.getElementById('modalContent');
-
-        projectItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const projectId = item.getAttribute('data-project-id');
-                const data = projectsData[projectId];
-                if (!data) return;
-
-                // Inject content
-                modalContent.innerHTML = `
-                    <div class="w-full lg:w-1/2 flex flex-col gap-6">
-                        <div class="w-full aspect-[4/3] rounded-[25px] overflow-hidden border border-white/10 shadow-lg">
-                            <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover"/>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="flex-1 bg-white/5 border border-white/10 rounded-[20px] p-4 text-center">
-                                <span class="font-label-sm text-[10px] text-outline block mb-1 uppercase">Area</span>
-                                <span class="font-headline-md text-xl text-on-surface">${data.area}</span>
-                            </div>
-                            <div class="flex-1 bg-white/5 border border-white/10 rounded-[20px] p-4 text-center">
-                                <span class="font-label-sm text-[10px] text-outline block mb-1 uppercase">Timeline</span>
-                                <span class="font-headline-md text-xl text-on-surface">${data.timeline}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full lg:w-1/2 flex flex-col justify-between gap-8">
-                        <div>
-                            <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[3px] block mb-2">${data.category}</span>
-                            <h2 class="font-headline-lg-mobile md:font-headline-md text-3xl md:text-5xl text-on-surface leading-tight mb-4">${data.title}</h2>
-                            <p class="font-label-sm text-label-sm text-outline uppercase tracking-[2px] mb-6">${data.location}</p>
-                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">${data.description}</p>
-                        </div>
-                        <div class="border-t border-white/10 pt-6">
-                            <span class="material-symbols-outlined text-champagne-gold text-3xl opacity-40 block mb-2">format_quote</span>
-                            <p class="font-body-md text-body-md text-on-surface italic font-light">${data.quote}</p>
-                        </div>
-                    </div>
-                `;
-
-                // Show modal
-                modal.classList.remove('pointer-events-none', 'opacity-0');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeProjectModal() {
-            modal.classList.add('pointer-events-none', 'opacity-0');
-            document.body.style.overflow = '';
-        }
-
-        closeModal.addEventListener('click', closeProjectModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeProjectModal();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+="project-main-image"
+        >

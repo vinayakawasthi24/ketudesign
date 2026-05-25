@@ -1,610 +1,279 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ketu Studio - Luxury Commercial Interiors &amp; Turnkey Office Design</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary": "#670020",
-                      "surface-container-lowest": "#020d26",
-                      "secondary-fixed": "#ffd9dc",
-                      "surface-tint": "#b1c5ff",
-                      "surface-container": "#131f38",
-                      "soft-pink": "#FFD6E7",
-                      "royal-blue": "#2B56F5",
-                      "surface": "#06132c",
-                      "tertiary-container": "#004957",
-                      "off-white": "#FAFAFA",
-                      "inverse-surface": "#d9e2ff",
-                      "outline": "#8e909d",
-                      "primary-fixed": "#dae2ff",
-                      "on-secondary-container": "#ff9da8",
-                      "secondary-container": "#8c1b36",
-                      "surface-dim": "#06132c",
-                      "on-tertiary-fixed": "#001f26",
-                      "on-tertiary-container": "#37bedb",
-                      "primary-container": "#0b3d91",
-                      "surface-container-highest": "#29344f",
-                      "on-error": "#690005",
-                      "secondary": "#ffb2ba",
-                      "on-primary-fixed-variant": "#144296",
-                      "on-surface-variant": "#c4c6d3",
-                      "on-tertiary-fixed-variant": "#004e5d",
-                      "on-primary-container": "#8dadff",
-                      "tertiary-fixed-dim": "#58d6f4",
-                      "secondary-fixed-dim": "#ffb2ba",
-                      "on-surface": "#d9e2ff",
-                      "on-secondary-fixed-variant": "#891834",
-                      "on-background": "#d9e2ff",
-                      "champagne-gold": "#D8C3A5",
-                      "background": "#06132c",
-                      "on-primary": "#002c71",
-                      "on-primary-fixed": "#001947",
-                      "on-secondary-fixed": "#400010",
-                      "outline-variant": "#434652",
-                      "inverse-on-surface": "#24304a",
-                      "error-container": "#93000a",
-                      "on-tertiary": "#003640",
-                      "inverse-primary": "#345baf",
-                      "error": "#ffb4ab",
-                      "primary-fixed-dim": "#b1c5ff",
-                      "surface-variant": "#29344f",
-                      "surface-container-high": "#1e2a43",
-                      "tertiary-fixed": "#adecff",
-                      "on-error-container": "#ffdad6",
-                      "surface-bright": "#2d3953",
-                      "primary": "#b1c5ff",
-                      "surface-container-low": "#0e1b34",
-                      "tertiary": "#58d6f4"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "section-v-lg": "130px",
-                      "section-v-md": "110px",
-                      "gutter-grid": "30px",
-                      "container-margin": "8%",
-                      "gap-component": "20px"
-              },
-              "fontFamily": {
-                      "display-hero-mobile": ["Playfair Display"],
-                      "body-md": ["Inter"],
-                      "label-caps": ["Inter"],
-                      "headline-lg": ["Playfair Display"],
-                      "body-lg": ["Inter"],
-                      "headline-md": ["Playfair Display"],
-                      "headline-lg-mobile": ["Playfair Display"],
-                      "label-sm": ["Inter"],
-                      "display-hero": ["Playfair Display"]
-              },
-              "fontSize": {
-                      "display-hero-mobile": ["54px", {"lineHeight": "1.0", "fontWeight": "700"}],
-                      "body-md": ["16px", {"lineHeight": "1.9", "fontWeight": "400"}],
-                      "label-caps": ["13px", {"lineHeight": "1.0", "letterSpacing": "4px", "fontWeight": "600"}],
-                      "headline-lg": ["74px", {"lineHeight": "1.0", "fontWeight": "600"}],
-                      "body-lg": ["22px", {"lineHeight": "1.8", "fontWeight": "300"}],
-                      "headline-md": ["34px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                      "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
-                      "label-sm": ["10px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "500"}],
-                      "display-hero": ["92px", {"lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-              }
-            }
-          }
-        }
-    </script>
-<style>
-        /* Core Styling & Layout Setup */
-body {
-    background-color: #131D3B; /* Deep Navy Base */
-    color: #FFFFFF;
-    overflow-x: hidden;
-}
-
-/* Scroll Animation Framework (GSAP Fallbacks) */
-.gsap-reveal {
-    opacity: 0;
-    transform: translateY(80px);
-    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.gsap-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Ambient Vector Lighting (Updated to Royal Blue Flare) */
-.cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(14, 52, 166, 0.2) 0%, rgba(14, 52, 166, 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    transition: width 0.3s, height 0.3s;
-}
-
-/* Premium Interactive Custom Cursor Tracking */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #0E34A6; /* Sharp Accent Border */
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
-
-.hover-interactive {
-    cursor: none;
-}
-
-/* Interactive Cursor Scale States */
-.hover-interactive:hover ~ .custom-cursor {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #FFFFFF;
-}
-
-/* Fluid Horizontal Marquee Scroller */
-.marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-
-.marquee-content {
-    display: inline-flex;
-    animation: marquee 40s linear infinite;
-    gap: 24px;
-}
-
-.marquee-content:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-reverse {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-}
-
-/* Monolithic Cinematic Wall Text System */
-.sliding-bg-text-container {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    z-index: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    overflow: hidden;
-}
-
-.sliding-bg-text {
-    font-size: 15rem;
-    font-weight: 900;
-    white-space: nowrap;
-    color: #0E34A6; /* Bold Royal Contrast Layer */
-    opacity: 0.12;
-    line-height: 1;
-}
-
-.animate-slide {
-    animation: marquee 80s linear infinite;
-}
-
-.animate-slide-reverse {
-    animation: marquee-reverse 80s linear infinite;
-}
-
-/* Architecture Glassmorphism Cards */
-.glass-card {
-    background: rgba(19, 29, 59, 0.75); /* Clean Dark Navy Semi-Transparent Surface */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(14, 52, 166, 0.3); /* Subtle Royal Blue Border Trim */
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Accordion Component Flex Grid Transformations */
-.service-card-expand {
-    width: 350px;
-    flex-shrink: 0;
-}
-
-.service-card-expand:hover {
-    width: 500px;
-    background: #131D3B; /* Shifts to solid Navy on focus */
-    border-color: #0E34A6;
-}
-
-/* Context Reveal Text Layers */
-.service-card-expand .description-text {
-    opacity: 0;
-    max-height: 0;
-    color: rgba(255, 255, 255, 0.7);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.service-card-expand:hover .description-text {
-    opacity: 1;
-    max-height: 200px;
-    margin-top: 1rem;
-}
-    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workspaces That Deserve Their Own IMDB Page | Ketu Design Studio</title>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body class="relative min-h-screen cursor-none selection:bg-primary selection:text-on-primary">
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="custom-cursor" id="customCursor"></div>
-<!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-16 lg:px-24 py-4 bg-[#131D3B]/90 backdrop-blur-md border-b border-white/10 font-sans">
-  
-  <div class="flex items-center justify-start py-1">
-    <img 
-      src="img/ketu design studio logo white.png" 
-      alt="KETU DESIGN STUDIO" 
-      class="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-102 hover-interactive"
-    />
-  </div>
+<body>
 
-  <div class="hidden md:flex gap-8 items-center">
-    <a href="studio.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Studio</a>
-    <a href="portfolio.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Portfolio</a>
-    <a href="services.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Services</a>
-    <a href="insights.html" class="text-white/80 hover:text-white text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover-interactive">Insights</a>
-  </div>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Ketu Design Studio" />
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="index.html">STUDIO</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="services (1).html">SERVICES</a></li>
+            <li><a href="whyus.html">WHY US</a></li>
+            <li><a href="insights.html">INSIGHTS</a></li>
+        </ul>
+        <div class="nav-cta">
+                                <a href="contact.html" class="consultation-btn-nav">BOOK CONSULTATION</a>
+        </div>
+    </nav>
 
-  <button onclick="window.location.href='call.html';" class="hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-[#0E34A6] text-white text-xs uppercase tracking-widest font-bold hover:bg-white hover:text-[#131D3B] transition-all duration-500 hover:scale-105 hover-interactive">
-    Book Consultation
-  </button>
+    <!-- Floating Mobile/Tablet Consultation Trigger -->
+    <a href="contact.html" class="floating-consultation-btn">Book a Consultation</a>
 
-  <button class="md:hidden text-white hover-interactive p-2" aria-label="Toggle Menu">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    </svg>
-  </button>
-</nav>
-<!-- Hero Section -->
-<header class="relative w-full h-screen flex items-center justify-center px-container-margin pt-24 overflow-hidden group">
-<div class="absolute inset-0 z-0">
-<img alt="Luxury Office Interior" class="w-full h-full object-cover opacity-60 scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2GBF8uaC_3Hy1_6PTSSgyJz7TrDu3NEUwdiXhOfYlsn1vr4cjMYvGrU4zqDkuMzl3wIuuCt0weu6G33VHPYfGFkrK4yMdOamXYCobAN9UipDAyg11PIDjk5FU043zjLkkVbE9Vao2VXlXOB7YRdnAplDlhbR4L9S5CPURis1vc-ZmnKti5hzAQk6NOJi4DDNKGNDgJU5CAiTCqieQ58RZDe5epuC08c10OK5xjh_tGMC5Gxok69ulLD-WgbbhqQNf8wMTqpGcSiU"/>
-<div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/50 to-surface"></div>
-</div>
-<div class="relative z-10 w-full max-w-5xl text-center flex flex-col items-center gap-8 gsap-reveal visible">
-<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface tracking-tighter">
-                Workspaces That Deserve Their Own IMDB Page.
-            </h1>
-<p class="font-body-lg text-body-lg text-tertiary max-w-2xl mx-auto uppercase tracking-widest font-semibold">
-                The Ultimate One-Stop Solution for Office Creation That Doesn't Suck.
+    <!-- Premium Parallax Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <!-- Glassmorphism panel for perfect legibility -->
+            <div class="hero-glass-card">
+                <p class="hero-subtitle slide-in-left">THE ULTIMATE ONE-STOP SOLUTION FOR OFFICE CREATION THAT DOESN'T SUCK.</p>
+                <h1 class="hero-title slide-in-left">Workspaces That Deserve Their Own IMDB Page.</h1>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-filled">CONTACT US</a>
+                    <a href="services.html" class="btn btn-outlined">OUR SERVICES</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-container">
+            <div class="stat-box">
+                <h2>500+</h2>
+                <p>Projects Accomplished</p>
+                <div class="glass-shine"></div>
+            </div>
+            <div class="stat-box">
+                <h2>120+</h2>
+                <p>Elite Clients</p>
+                <div class="glass-shine"></div>
+            </div>
+            <div class="stat-box">
+                <h2>30+</h2>
+                <p>Design Accolades</p>
+                <div class="glass-shine"></div>
+            </div>
+            <div class="stat-box">
+                <h2>5.0★</h2>
+                <p>Client Satisfaction</p>
+                <div class="glass-shine"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Partners Carousel Section -->
+    <section class="partners" id="portfolio">
+        <div class="section-header">
+            <span class="badge">COLLABORATORS</span>
+            <h2>Trusted Partners</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="partner-carousel-wrapper">
+            <div class="partner-carousel">
+                <!-- Repeated logos to form a continuous infinite loop -->
+                <div class="partner-logo">Tech Mahindra</div>
+                <div class="partner-logo">Haldiram</div>
+                <div class="partner-logo">Reebok</div>
+                <div class="partner-logo">Tata Motors</div>
+                <!-- Duplicate for loop -->
+                <div class="partner-logo">Tech Mahindra</div>
+                <div class="partner-logo">Haldiram</div>
+                <div class="partner-logo">Reebok</div>
+                <div class="partner-logo">Tata Motors</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Philosophy Section -->
+    <section class="philosophy" id="why-us">
+        <div class="philosophy-container">
+            <span class="badge badge-light">OUR PHILOSOPHY</span>
+            <h2>Spaces That Inspire Businesses<br><span class="accent-text">(And 5-Star Reviews)</span></h2>
+            <p class="philosophy-text">
+                We transcend traditional interior design by engineering environments that inspire innovation, command authority, and reflect the elite nature of your enterprise. Every detail is a deliberate architectural statement.
             </p>
-<div class="flex flex-col sm:flex-row gap-6 mt-4">
-<button onclick="window.location.href='call.html';" class="px-8 py-4 rounded-full bg-[#0E34A6] text-white font-sans text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform duration-500 hover-interactive uppercase">
-    Let's Talk Numbers
-</button>
+        </div>
+    </section>
 
-<button onclick="window.location.href= 'portfolio.html';" class="px-8 py-4 rounded-full border-2 border-white/20 text-white font-sans text-xs uppercase tracking-widest font-bold hover:bg-white hover:text-[#131D3B] hover:border-white transition-all duration-500 hover-interactive uppercase">
-    See Our Portfolio
-</button>
-</div>
-</div>
-</header>
+    <!-- Our Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="badge">EXPERT SOLUTIONS</span>
+            <h2>Our Specialized Services</h2>
+            <p class="section-subtitle">Bespoke spatial design engineered to inspire growth, command authority, and foster innovation.</p>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="card-num">01</div>
+                <h3>Corporate Space Strategy</h3>
+                <p>Pre-design space auditing, feasibility assessments, and data-driven flow strategy designed to optimize employee synergy and spatial efficiency.</p>
+                <a href="services.html#strategy" class="card-link">Explore Strategy &rarr;</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="card-num">02</div>
+                <h3>Bespoke Office Architecture</h3>
+                <p>Premium, high-end interior architecture and custom fit-outs engineered to reflect the elite status and specific functional requirements of your firm.</p>
+                <a href="services.html#architecture" class="card-link">Explore Architecture &rarr;</a>
+            </div>
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="card-num">03</div>
+                <h3>Executive & C-Suite Designs</h3>
+                <p>Exclusive, private boardrooms, lounges, and private offices crafted to make powerful statements, inspire big decisions, and comfort elite minds.</p>
+                <a href="services.html#suites" class="card-link">Explore Executive Suites &rarr;</a>
+            </div>
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="card-num">04</div>
+                <h3>Luxury Amenity Zones</h3>
+                <p>High-end cafeteria lounges, wellness pods, dynamic discussion hubs, and reception entries designed to impress visitors and recharge teams.</p>
+                <a href="services.html#amenities" class="card-link">Explore Amenity Zones &rarr;</a>
+            </div>
+            <!-- Card 5 -->
+            <div class="service-card">
+                <div class="card-num">05</div>
+                <h3>Turnkey Project Execution</h3>
+                <p>Complete project supervision from procurement to physical assembly with a single point of contact, ensuring flawless delivery on schedule.</p>
+                <a href="services.html#turnkey" class="card-link">Explore Management &rarr;</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Quotes & Testimonials Section -->
+    <section class="reviews" id="insight">
+        <div class="section-header">
+            <span class="badge">TESTIMONIALS</span>
+            <h2>Words From The C-Suite</h2>
+            <p class="section-subtitle">Real outcomes from our luxury workspace transformation and bespoke office design projects across the country.</p>
+            <div class="divider"></div>
+        </div>
 
-
-<!-- Section 3: Interactive Logo Carousel -->
-<section class="w-full py-20 bg-surface border-y border-white/5 relative z-10 overflow-hidden">
-<div class="px-container-margin mb-8 gsap-reveal text-center visible">
-<span class="font-label-caps text-label-caps text-on-surface-variant opacity-60 uppercase tracking-[4px]">Trusted by Industry Leaders</span>
-</div>
-<div class="marquee-container hover-interactive">
-<div class="marquee-content flex gap-24 items-center px-12 opacity-50">
-<!-- Repeated for infinite effect -->
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">HALDIRAM</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">REEBOK</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">TECH MAHINDRA</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">TATA MOTORS</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">HALDIRAM</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">REEBOK</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">TECH MAHINDRA</h4>
-<h4 class="font-headline-md text-headline-md text-on-surface whitespace-nowrap">TATA MOTORS</h4>
-</div>
-</div>
-</section>
-<!-- Section 1: Elevating Office Spaces -->
-<section class="w-full px-container-margin py-section-v-lg relative z-10 bg-white">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-grid items-center">
-<div class="gsap-reveal flex flex-col gap-6 visible">
-<span class="font-label-caps text-label-caps uppercase tracking-[4px] text-surface-container-lowest">Our Philosophy</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg leading-tight text-surface-container-lowest">
-                    Spaces That Inspire Businesses (And 5-Star Reviews)
-                </h2>
-<p class="font-body-md text-body-md max-w-md text-surface-container-lowest">
-                    We transcend traditional interior design by engineering environments that inspire innovation, command authority, and reflect the elite nature of your enterprise. Every detail is a deliberate architectural statement.
-                </p>
-<div class="pt-8">
-<a class="inline-flex items-center gap-2 font-label-caps text-label-caps hover:opacity-80 transition-opacity hover-interactive uppercase group text-surface-container-lowest" href="#">
-                        Discover Our Approach
-                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-</a>
-</div>
-</div>
-<div class="gsap-reveal relative h-[600px] w-full rounded-[35px] overflow-hidden group visible">
-<img alt="Bespoke Design details" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ugDRMJzemTYjQZ5X794rPIO1bJ9zUEA7Tix22_Ss1ly1n5yjZ_TAmuTbzJulhSh9fVLBUdNEmKmx-RXXpGViuz9VUO69g3x8mKfCfny1ltYSDli9EijmicT05e4J_XtFvXZSS3hjkR54undC22FQRNfQDp-elJ2on1_vAQY3dHT4z7YxDFvn18HLdIaZiXBhGj8fFFO3BvMbhsQwBBdMrbv6PpYnyRBx_GvTc8uICk3UfgeoNuMFIOIskQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
-</div>
-</div>
-</section>
-<!-- Section 2: Our Services (Capabilities) -->
-<section class="w-full py-section-v-lg bg-surface-container-lowest relative z-10 overflow-hidden">
-  <div class="px-container-margin flex flex-col gap-12 gsap-reveal visible mb-12">
-    <div class="flex justify-between items-end">
-      <div>
-        <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-[4px] block mb-4">Capabilities</span>
-        <h2 class="font-headline-md text-headline-md text-on-surface">Our Services</h2>
-      </div>
-      <a class="hidden md:inline-flex items-center gap-2 font-label-caps text-label-caps text-champagne-gold hover-interactive uppercase group" href="#">
-        View All Services
-        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="marquee-container w-full">
-    <div class="marquee-content py-10 px-6">
-      <div class="service-card-expand glass-card rounded-[35px] p-6 flex flex-col gap-6 group hover-interactive">
-        <div class="w-full aspect-[4/5] rounded-[20px] overflow-hidden relative">
-          <img alt="Spatial Strategy & Workspace Planning" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ujF2iocLfa03Z8ngx-dm_YZTMT3vtFOAMfyvjcQd3ss0hygQtqPha6jwa1Kw3y9XSPSJh80Ghpu_UAIOneBOdCvKT-8sJfJVvq8DhzzYWGxgqiMLQbpZ4tcS5qg8gUp05IFBNwLSBE5ycOMxCX4URk2tnA3eaY2QuZmLy2BlC5A-B908M8NDQJ8EdG3CA1ZkplQqVosp13lyI7FnnoXxD01DaNOPdaicWH8sWVQYI0mSdmbNFSfyZd3hw"/>
-        </div>
-        <div class="flex-1 flex flex-col">
-          <h3 class="font-headline-md text-headline-md text-on-surface text-2xl line-clamp-2 min-h-[2.5rem]">Spatial Strategy & Workspace Planning</h3>
-          <p class="description-text font-body-md text-body-md text-on-surface-variant line-clamp-3">Strategic layout design and premium workspace planning maximizing operational flow and aesthetic impact in your corporate ecosystem.</p>
-        </div>
-      </div>
-
-      <div class="service-card-expand glass-card rounded-[35px] p-6 flex flex-col gap-6 group hover-interactive">
-        <div class="w-full aspect-[4/5] rounded-[20px] overflow-hidden relative">
-          <img alt="Commercial Renovation" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ujbxBD7ObD0nKUrjQGGbMTSlhuHpvKRHnDjkE5HG0kIoqoPA7MvS5nEu2I3z_AYX1h_SRYG4IyOnq0Py8WueM-_bja-_quA55FtbtjWE1HHfEk8jmKYLEyPjx_lrBiIT6Jg-bSBjMiG0mbvJpBImVRJFtN95E-J4Gl71URBQVF4is9s9c-e8B6CGQ_iEbdFMhoqj1q3CoG-DmR_RW3HbEjZG6wQkqS9OYYCyTLvo8RYa_vAX6lV2mVkQec"/>
-        </div>
-        <div class="flex-1 flex flex-col">
-          <h3 class="font-headline-md text-headline-md text-on-surface text-2xl line-clamp-2 min-h-[2.5rem]">Commercial Renovation</h3>
-          <p class="description-text font-body-md text-body-md text-on-surface-variant line-clamp-3">Transforming legacy assets into modern powerhouses of productivity. We merge historical context with futuristic functionality.</p>
-        </div>
-      </div>
-
-      <div class="service-card-expand glass-card rounded-[35px] p-6 flex flex-col gap-6 group hover-interactive">
-        <div class="w-full aspect-[4/5] rounded-[20px] overflow-hidden relative">
-          <img alt="Interior Styling" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ujhDImzbSRxVzx4301HgcduEwagcfvch-O27pMYbjy8fk5SLJ3xiREE_bgbJJb9ffyL5_r2LsolWONVtFhOyzMtpazs0UP4-Vkh0H4H3T8a-EXqSkWe0spvdAzz8iqPf8e7FyW1y8oUoGuN19D2XkgyQKRfwLIF6By8yOYAAgUPmt1nZcd3fgiNphproLYLhRbrNLXmIBOqjAhRYhvLy4dHm22Y24YfzvFQ8FzjgBYrkQ-xfUDx7eDXkw"/>
-        </div>
-        <div class="flex-1 flex flex-col">
-          <h3 class="font-headline-md text-headline-md text-on-surface text-2xl line-clamp-2 min-h-[2.5rem]">Interior Styling</h3>
-          <p class="description-text font-body-md text-body-md text-on-surface-variant line-clamp-3">Curated selection of finishes, custom furnishings, and artistic styling that speaks your exact brand narrative.</p>
-        </div>
-      </div>
-
-      <div class="service-card-expand glass-card rounded-[35px] p-6 flex flex-col gap-6 group hover-interactive">
-        <div class="w-full aspect-[4/5] rounded-[20px] overflow-hidden relative">
-          <img alt="Fitout" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ugDRMJzemTYjQZ5X794rPIO1bJ9zUEA7Tix22_Ss1ly1n5yjZ_TAmuTbzJulhSh9fVLBUdNEmKmx-RXXpGViuz9VUO69g3x8mKfCfny1ltYSDli9EijmicT05e4J_XtFvXZSS3hjkR54undC22FQRNfQDp-elJ2on1_vAQY3dHT4z7YxDFvn18HLdIaZiXBhGj8fFFO3BvMbhsQwBBdMrbv6PpYnyRBx_GvTc8uICk3UfgeoNuMFIOIskQ"/>
-        </div>
-        <div class="flex-1 flex flex-col">
-          <h3 class="font-headline-md text-headline-md text-on-surface text-2xl line-clamp-2 min-h-[2.5rem]">Fitout</h3>
-          <p class="description-text font-body-md text-body-md text-on-surface-variant line-clamp-3">Flawless execution of interior transformations from bare-shell spaces to premium, turnkey-ready corporate headquarters.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Section 3: Testimonials (Words From The C-Suite) - UPDATED -->
-<section class="w-full py-section-v-lg bg-white relative z-10 overflow-hidden">
-<!-- Sliding Background Text Effect -->
-<div class="sliding-bg-text-container">
-<div class="sliding-bg-text animate-slide">ELITE DESIGN CINEMATIC SPACES UNCOMPROMISING QUALITY ELITE DESIGN CINEMATIC SPACES UNCOMPROMISING QUALITY</div>
-<div class="sliding-bg-text animate-slide-reverse" style="margin-left: -50%;">CINEMATIC SPACES UNCOMPROMISING QUALITY ELITE DESIGN CINEMATIC SPACES UNCOMPROMISING QUALITY ELITE DESIGN</div>
-</div>
-<div class="px-container-margin relative z-10">
-<div class="flex flex-col gap-6 mb-16 gsap-reveal visible">
-<span class="font-label-caps text-label-caps text-surface-container-lowest uppercase tracking-[4px] block">Words From The C-Suite</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-surface-container-lowest">Voices Of Success</h2>
-<p class="font-body-lg text-surface-container-lowest/70 max-w-2xl">Real outcomes from our luxury workspace transformation and bespoke office design projects across the country.</p>
-</div>
-<div class="relative group">
-<div class="flex gap-gutter-grid overflow-x-hidden scroll-smooth pb-12" id="testimonial-track">
-<!-- Testimonial 1 -->
-<div class="min-w-full md:min-w-[calc(50%-15px)] bg-white border border-black/5 shadow-sm rounded-[35px] p-10 flex flex-col gap-8 transition-all duration-700 hover:shadow-xl hover:border-champagne-gold/30">
-<span class="material-symbols-outlined text-surface-container-lowest text-5xl opacity-20">format_quote</span>
-<p class="font-headline-md text-surface-container-lowest italic leading-relaxed text-2xl">
+        <div class="reviews-container">
+            <!-- Review 1 -->
+            <div class="quote-card">
+                <div class="quote-icon">“</div>
+                <p class="quote-text">
                     "Ketu didn't just build an office; they built a stage for our best work. 10/10 would definitely let them move the furniture again."
                 </p>
-<div class="flex items-center gap-4 mt-auto">
-<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center font-bold text-white uppercase">SM</div>
-<div>
-<h4 class="font-label-caps text-surface-container-lowest">Sanjay Mittal</h4>
-<p class="font-label-sm text-surface-container-lowest/60">CEO, Tech Mahindra</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="min-w-full md:min-w-[calc(50%-15px)] bg-white border border-black/5 shadow-sm rounded-[35px] p-10 flex flex-col gap-8 transition-all duration-700 hover:shadow-xl hover:border-champagne-gold/30">
-<span class="material-symbols-outlined text-surface-container-lowest text-5xl opacity-20">format_quote</span>
-<p class="font-headline-md text-surface-container-lowest italic leading-relaxed text-2xl">
+                <div class="quote-author-info">
+                    <div class="author-avatar">SM</div>
+                    <div>
+                        <h4 class="author-name">Sanjay Mittal</h4>
+                        <p class="author-title">CEO, Tech Mahindra</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="quote-card">
+                <div class="quote-icon">“</div>
+                <p class="quote-text">
                     "Finally, a workspace that looks as good as our quarterly projections. The 'I Made It' Suite is a literal game changer."
                 </p>
-<div class="flex items-center gap-4 mt-auto">
-<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center font-bold text-white uppercase">AK</div>
-<div>
-<h4 class="font-label-caps text-surface-container-lowest">Ananya Kapoor</h4>
-<p class="font-label-sm text-surface-container-lowest/60">Director, Reebok</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="min-w-full md:min-w-[calc(50%-15px)] bg-white border border-black/5 shadow-sm rounded-[35px] p-10 flex flex-col gap-8 transition-all duration-700 hover:shadow-xl hover:border-champagne-gold/30">
-<span class="material-symbols-outlined text-surface-container-lowest text-5xl opacity-20">format_quote</span>
-<p class="font-headline-md text-surface-container-lowest italic leading-relaxed text-2xl">
-                    "They turned our vision into a cinematic masterpiece. The design doesn't just look expensive; it feels authoritative."
-                </p>
-<div class="flex items-center gap-4 mt-auto">
-<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center font-bold text-white uppercase">RV</div>
-<div>
-<h4 class="font-label-caps text-surface-container-lowest">Rohan Verma</h4>
-<p class="font-label-sm text-surface-container-lowest/60">VP Operations, Tata Motors</p>
-</div>
-</div>
-</div>
-</div>
-<div class="flex justify-center gap-4 mt-8">
-<button class="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-surface-container-lowest hover:bg-surface-container-lowest hover:text-white transition-all duration-500 hover-interactive">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-surface-container-lowest hover:bg-surface-container-lowest hover:text-white transition-all duration-500 hover-interactive">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</div>
-</div>
-<div class="flex flex-col items-center justify-center mt-24 gsap-reveal visible gap-12 relative z-10">
-<div class="text-center font-sans">
-  <h2 class="font-serif text-3xl md:text-4xl text-[#131D3B] mb-8 tracking-wide font-normal">
-    Stop Ghosting Your Dream Office.
-  </h2>
-
-  <a href="call.html" class="px-10 py-5 rounded-full bg-[#0E34A6] text-white font-sans text-xs uppercase tracking-widest font-bold hover:scale-105 transition-all duration-500 hover-interactive inline-flex items-center gap-3 shadow-md shadow-[#0E34A6]/10 decoration-none">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-      <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-    </svg>
-    Call the Workspace Experts +91 83988 01801
-  </a>
-</div>
-<a href="portfolio.html" class="px-10 py-5 rounded-full bg-transparent border-2 border-[#131D3B] text-[#131D3B] font-sans text-xs uppercase tracking-widest font-bold hover:bg-[#0E34A6] hover:text-white hover:border-[#0E34A6] transition-all duration-500 hover-interactive inline-flex items-center justify-center decoration-none">
-  Explore Full Portfolio
-</a>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="w-full px-[8%] py-[110px] flex flex-col md:flex-row justify-between border-t border-white/5 bg-surface-container-lowest dark:bg-surface-container-lowest relative z-10">
-<div class="flex flex-col gap-6 mb-12 md:mb-0">
-<div class="font-headline-lg text-headline-lg text-on-surface dark:text-on-surface uppercase">
-                KETU STUDIO
+                <div class="quote-author-info">
+                    <div class="author-avatar">AK</div>
+                    <div>
+                        <h4 class="author-name">Ananya Kapoor</h4>
+                        <p class="author-title">Director, Reebok</p>
+                    </div>
+                </div>
             </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
-                Engineering excellence in commercial interior design. Pan India Operations. One-stop solution for luxury workspace needs.
-            </p>
-<p class="font-label-sm text-label-sm text-outline mt-auto uppercase tracking-widest">
-                © 2024 Ketu Design Studio. Engineering Excellence.
-            </p>
-</div>
-<div class="flex flex-col md:flex-row gap-12 md:gap-24">
-<div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Navigation</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="studio.html">Studio</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="portfolio.html">Portfolio</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="services.html">Services</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-on-surface uppercase mb-2">Legal</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Careers</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 hover-interactive" href="#">Press Kit</a>
-</div>
-</div>
-</footer>
-<script>
-        // Custom Cursor Logic
-        const cursor = document.getElementById('customCursor');
-        const glow = document.getElementById('cursorGlow');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+        </div>
+    </section>
+
+    <!-- Call to Action Section (Directed to telephone hook) -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Corporate Workspace?</h2>
+            <p>Connect with our expert design partners to draft your space roadmap and discover design that drives ROI.</p>
+            <div class="cta-buttons">
+                <a href="tel:+918398801801" class="btn btn-filled slide-in-left">CONTACT US</a>
+                <a href="whyus.html" class="btn btn-outlined slide-in-left">WHY US</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Expanded Premium Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand-col">
+                <img src="logo.png" alt="Ketu Design Studio" class="footer-logo" />
+                <p class="brand-pitch">
+                    Transforming workspace architecture into elite environments of productivity, innovation, and corporate prestige.
+                </p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LN</a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">IG</a>
+                    <a href="tel:+918398801801" aria-label="Phone">PH</a>
+                </div>
+            </div>
             
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-        });
+            <div class="footer-links-col">
+                <h3>Quick Nav</h3>
+                <ul>
+                    <li><a href="index.html">Studio</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                </ul>
+            </div>
 
-        // Interactive Hover States for Cursor
-        const interactives = document.querySelectorAll('.hover-interactive');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.width = '40px';
-                cursor.style.height = '40px';
-                cursor.style.backgroundColor = 'rgba(216, 195, 165, 0.2)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.width = '20px';
-                cursor.style.height = '20px';
-                cursor.style.backgroundColor = 'transparent';
-            });
-        });
+            <div class="footer-links-col">
+                <h3>Our Core Services</h3>
+                <ul>
+                    <li><a href="services.html#strategy">Corporate Space Strategy</a></li>
+                    <li><a href="services.html#architecture">Bespoke Office Architecture</a></li>
+                    <li><a href="services.html#suites">C-Suite Executive Design</a></li>
+                    <li><a href="services.html#amenities">Luxury Amenity Planning</a></li>
+                </ul>
+            </div>
 
-        // Simple Scroll Reveal
-        const reveals = document.querySelectorAll('.gsap-reveal');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const elementVisible = 100;
+            <div class="footer-contact-col">
+                <h3>Headquarters</h3>
+                <p class="footer-address">
+                    Ketu Design Studio,<br>
+                    VATIKA BUSINESS PARK,<br>
+                    Badshahpur Sohna Rd, Block W,<br>
+                    Sector 49, Gurugram, Haryana 122018
+                </p>
+                <p class="footer-phone">
+                    <strong>Phone:</strong> <a href="tel:+918398801801">+91 83988 01801</a>
+                </p>
+            </div>
+        </div>
 
-            reveals.forEach(reveal => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.add('visible');
-                }
-            });
-        };
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ketu Design Studio. Smart Designs | Seamless Execution. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="contact.html">Contact Form</a>
+                <span class="bullet">&bull;</span>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
-
-        // Testimonial Navigation Mock (preserving functionality as requested)
-        const track = document.getElementById('testimonial-track');
-        const nextBtn = document.querySelector('button .material-symbols-outlined:contains("chevron_right")')?.parentElement;
-        const prevBtn = document.querySelector('button .material-symbols-outlined:contains("chevron_left")')?.parentElement;
-        
-        // Use standard selectors if text-based contains fails in this environment
-        const btns = document.querySelectorAll('.flex.justify-center.gap-4.mt-8 button');
-        const pBtn = btns[0];
-        const nBtn = btns[1];
-
-        if(nBtn && pBtn && track) {
-            nBtn.addEventListener('click', () => {
-                track.scrollBy({ left: track.offsetWidth, behavior: 'smooth' });
-            });
-            pBtn.addEventListener('click', () => {
-                track.scrollBy({ left: -track.offsetWidth, behavior: 'smooth' });
-            });
-        }
-    </script>
-</body></html>
+    <script src="script.js"></script>
+</body>
+</html>
