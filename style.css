@@ -2592,8 +2592,101 @@ p, span, li, a, button, input {
 }
 
 
+/* ==========================================================================
+   Portfolio Grid Alignment Fix
+   ========================================================================== */
 
+/* Universal grid normalization for the container wrapper */
+.portfolio-grid, 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
 
+/* Fixes trailing or individual last image elements */
+.portfolio-grid > *:last-child,
+.project-grid > *:last-child {
+    /* If the item is completely alone on a row, this keeps its layout clean */
+    grid-column: auto / -1; 
+    max-width: 100%;
+}
+
+/* Ensure the image container blocks match modern box-model properties */
+.portfolio-item,
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-item img,
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents the final image from distorting or squishing */
+    display: block;
+}
+
+/* Tablet & Mobile Grid Track Fallbacks */
+@media (max-width: 1024px) {
+    .portfolio-grid, .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid, .project-grid {
+        grid-template-columns: 1fr; /* Normalizes cleanly into single vertical column */
+        gap: 2rem;
+    }
+    
+    .portfolio-grid > *:last-child,
+    .project-grid > *:last-child {
+        grid-column: auto; /* Reset column span constraints cleanly for flat stacking */
+    }
+}
+
+/* ==========================================================================
+   Portfolio Mobile Layout Stack Fix
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Force the row layout to stack vertically */
+    .project-showcase-block,
+    .project-showcase-block:nth-child(even) {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1.5rem !important;
+        margin-bottom: 4rem !important;
+    }
+
+    /* 2. Ensure both the text block and image block take up full screen width */
+    .project-info-side,
+    .project-media-side {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    /* 3. Style the image container so it occupies clean aspect ratios on mobile */
+    .project-media-side {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* 4. Ensure the actual image fills its vertical column natively without distorting */
+    .project-main-image {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 450px; /* Keeps the portrait/square renders from taking over the whole screen */
+        object-fit: cover !important;
+        display: block !important;
+    }
+}
 
 
 
@@ -2609,23 +2702,27 @@ p, span, li, a, button, input {
    ========================================================================== */
 
 /* Hidden structural input style injected by JS */
+/* ==========================================================================
+   Zero-HTML-Change Mobile Menu Engine (Blue Theme)
+   ========================================================================== */
+
 .menu-checkbox {
     display: none !important;
 }
 
 @media (max-width: 768px) {
-    /* 1. Reset Navbar Layout positioning */
+    /* 1. Navbar turns Blue on Mobile */
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
         padding: 1rem 1.5rem;
-        background-color: var(--white-bg, #FFFFFF);
+        background-color: var(--premium-blue-dark, #0F172A) !important; /* Forces your site's dark blue background */
         z-index: 1000;
     }
 
-    /* 2. Style the Dynamically Added Hamburger Bar */
+    /* 2. White Hamburger Toggle Bars */
     .hamburger-label {
         display: flex !important;
         flex-direction: column;
@@ -2633,7 +2730,7 @@ p, span, li, a, button, input {
         width: 24px;
         height: 18px;
         cursor: pointer;
-        order: 3; /* Forces it to the right side next to the logo/cta */
+        order: 3; 
         z-index: 1001;
     }
 
@@ -2641,28 +2738,26 @@ p, span, li, a, button, input {
         display: block;
         width: 100%;
         height: 2px;
-        background-color: var(--premium-blue-dark, #0F172A);
+        background-color: #FFFFFF !important; /* Crisp white bars to contrast against the blue navbar */
         border-radius: 2px;
         transition: all 0.3s ease-in-out;
     }
 
-    /* 3. Convert Desktop Menu to a Mobile Dropdown Drawer */
+    /* 3. Dropdown Drawer Configuration */
     .nav-links {
-        display: flex !important; /* Overrides the old display: none */
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1.75rem;
         
-        /* Dropdown Architecture Setup */
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--premium-blue-dark, #0F172A);
+        background-color: var(--premium-blue-dark, #0F172A); /* Seamless color match */
         padding: 0;
         
-        /* Hidden Drawer State */
         max-height: 0;
         opacity: 0;
         overflow: hidden;
@@ -2670,7 +2765,6 @@ p, span, li, a, button, input {
         border-bottom: 0px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Fix menu link visual properties */
     .nav-links li a {
         color: #94A3B8 !important;
         font-size: 1.1rem;
@@ -2686,7 +2780,7 @@ p, span, li, a, button, input {
         color: #FFFFFF !important;
     }
 
-    /* 4. Reposition or scale down the original CTA on Mobile */
+    /* 4. CTA adjustments on mobile */
     .nav-cta {
         order: 2;
         margin-left: auto;
@@ -2696,13 +2790,13 @@ p, span, li, a, button, input {
     .consultation-btn-nav {
         font-size: 0.75rem !important;
         padding: 0.6rem 1.2rem !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
     }
 
     /* ==========================================================================
-       Functional Toggle Behavior Engine (Via Checked Pseudo-class)
+       Toggle States
        ========================================================================== */
 
-    /* Expands the links panel when checked */
     .menu-checkbox:checked ~ .nav-links {
         max-height: 450px;
         padding: 2.5rem 1.5rem;
@@ -2710,10 +2804,10 @@ p, span, li, a, button, input {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Morph hamburger lines into an elegant close 'X' */
+    /* Hamburger to 'X' Transformations */
     .menu-checkbox:checked ~ .hamburger-label span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-        background-color: var(--premium-blue-dark, #0F172A);
+        background-color: #FFFFFF !important;
     }
 
     .menu-checkbox:checked ~ .hamburger-label span:nth-child(2) {
@@ -2722,6 +2816,6 @@ p, span, li, a, button, input {
 
     .menu-checkbox:checked ~ .hamburger-label span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--premium-blue-dark, #0F172A);
+        background-color: #FFFFFF !important;
     }
 }
