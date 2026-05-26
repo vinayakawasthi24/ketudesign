@@ -228,7 +228,7 @@ p, span, li, a, button, input {
 .hero {
     position: relative;
     min-height: 85vh;
-    background: url('hero.jpg') center/cover no-repeat;
+    background: url('images/WhatsApp\ Image\ 2026-05-24\ at\ 21.04.38\ \(4\).jpeg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -404,28 +404,43 @@ p, span, li, a, button, input {
     display: flex;
     gap: 6rem;
     width: max-content;
-    animation: marquee 25s linear infinite;
+    align-items: center;
+    /* Changed to 'infinite' and matches the exact keyframe configuration below */
+    animation: marquee 20s linear infinite;
 }
 
 .partner-logo {
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #94A3B8;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
     user-select: none;
-    cursor: default;
+    /* CRITICAL: Prevents flexbox from compressing the images at the end of the line */
+    flex-shrink: 0; 
 }
 
-.partner-logo:hover {
-    color: var(--premium-blue-dark);
+.partner-logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: opacity(75%);
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+.partner-logo img:hover {
+    filter: opacity(100%);
+    transform: scale(1.06);
+}
+
+/* Updated precise translation calculation */
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Moving by exactly calc(-50% - 3rem) compensates perfectly for the layout gaps */
+        transform: translateX(calc(-50% - 3rem));
+    }
 }
 
 /* --- Philosophy (Premium Deep Blue Container) --- */
