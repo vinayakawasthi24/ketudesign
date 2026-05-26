@@ -45,3 +45,25 @@ statBoxes.forEach(box => {
         box.style.transform = 'translateY(0) scale(1)';
     });
 });
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        // Inject structural checkbox and graphic bars without breaking existing items
+        navbar.insertAdjacentHTML('afterbegin', `
+            <input type="checkbox" id="mobile-menu-checkbox" class="menu-checkbox">
+            <label for="mobile-menu-checkbox" class="hamburger-label" style="display: none;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        `);
+    }
+});

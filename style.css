@@ -2590,3 +2590,138 @@ p, span, li, a, button, input {
         gap: 0.5rem 1rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Zero-HTML-Change Mobile Menu Engine
+   ========================================================================== */
+
+/* Hidden structural input style injected by JS */
+.menu-checkbox {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    /* 1. Reset Navbar Layout positioning */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 1rem 1.5rem;
+        background-color: var(--white-bg, #FFFFFF);
+        z-index: 1000;
+    }
+
+    /* 2. Style the Dynamically Added Hamburger Bar */
+    .hamburger-label {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+        order: 3; /* Forces it to the right side next to the logo/cta */
+        z-index: 1001;
+    }
+
+    .hamburger-label span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--premium-blue-dark, #0F172A);
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 3. Convert Desktop Menu to a Mobile Dropdown Drawer */
+    .nav-links {
+        display: flex !important; /* Overrides the old display: none */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.75rem;
+        
+        /* Dropdown Architecture Setup */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--premium-blue-dark, #0F172A);
+        padding: 0;
+        
+        /* Hidden Drawer State */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+        border-bottom: 0px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Fix menu link visual properties */
+    .nav-links li a {
+        color: #94A3B8 !important;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    .nav-links li.active a,
+    .nav-links li a:hover {
+        color: #FFFFFF !important;
+    }
+
+    /* 4. Reposition or scale down the original CTA on Mobile */
+    .nav-cta {
+        order: 2;
+        margin-left: auto;
+        margin-right: 1.5rem;
+    }
+
+    .consultation-btn-nav {
+        font-size: 0.75rem !important;
+        padding: 0.6rem 1.2rem !important;
+    }
+
+    /* ==========================================================================
+       Functional Toggle Behavior Engine (Via Checked Pseudo-class)
+       ========================================================================== */
+
+    /* Expands the links panel when checked */
+    .menu-checkbox:checked ~ .nav-links {
+        max-height: 450px;
+        padding: 2.5rem 1.5rem;
+        opacity: 1;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Morph hamburger lines into an elegant close 'X' */
+    .menu-checkbox:checked ~ .hamburger-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--premium-blue-dark, #0F172A);
+    }
+
+    .menu-checkbox:checked ~ .hamburger-label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked ~ .hamburger-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--premium-blue-dark, #0F172A);
+    }
+}
