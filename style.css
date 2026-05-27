@@ -298,8 +298,42 @@ p, span, li, a, button, input {
     display: flex;
     gap: 1.5rem;
 }
-
 /* --- Glassmorphism Stats Boxes --- */
+ .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--premium-blue-dark);
+    position: relative;
+}
+
+
+.cta-content {
+    /* Content inside overlay box, inherit styles */
+    margin: 0;
+}
+
+.cta-images {
+    display: flex;
+    gap: 1rem;
+    flex: 1 1 300px;
+    justify-content: flex-end;
+}
+
+.cta-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 .stats {
     background-color: var(--premium-blue-dark);
     padding: 5rem 2rem;
