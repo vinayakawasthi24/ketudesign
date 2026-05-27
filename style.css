@@ -407,7 +407,7 @@ p, span, li, a, button, input {
     left: 200%;
 }
 
-//* --- Infinite Moving Partner Logo Carousel --- */
+/* --- Infinite Moving Partner Logo Carousel --- */
 .partners {
     background-color: var(--white-bg);
     padding: 5rem 0;
