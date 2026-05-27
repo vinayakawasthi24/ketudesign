@@ -298,8 +298,42 @@ p, span, li, a, button, input {
     display: flex;
     gap: 1.5rem;
 }
-
 /* --- Glassmorphism Stats Boxes --- */
+ .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--premium-blue-dark);
+    position: relative;
+}
+
+
+.cta-content {
+    /* Content inside overlay box, inherit styles */
+    margin: 0;
+}
+
+.cta-images {
+    display: flex;
+    gap: 1rem;
+    flex: 1 1 300px;
+    justify-content: flex-end;
+}
+
+.cta-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 .stats {
     background-color: var(--premium-blue-dark);
     padding: 5rem 2rem;
@@ -499,7 +533,7 @@ p, span, li, a, button, input {
 .service-card {
     background-color: var(--white-bg);
     border: 1px solid var(--dark-border);
-    padding: 3.5rem 2.5rem;
+    padding: 2rem 1.5rem;
     border-radius: 16px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -507,7 +541,13 @@ p, span, li, a, button, input {
     flex-direction: column;
     height: 100%;
 }
-
+.service-img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
 .service-card::before {
     content: '';
     position: absolute;
@@ -575,8 +615,6 @@ p, span, li, a, button, input {
 
 .card-link:hover {
     color: var(--premium-blue-button);
-}
-
 /* --- Detailed Subpages Styling Grid Layouts --- */
 
 /* Page Banner/Hero Header */
@@ -778,6 +816,86 @@ p, span, li, a, button, input {
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
     font-weight: 600;
+}
+    /* Section wrapper */
+.reviews {
+    background-color: var(--white-bg);
+    padding: 6rem 2rem;               /* generous vertical spacing */
+}
+/* Grid for the two testimonial cards */
+.reviews-container {
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+/* Individual testimonial card */
+.quote-card {
+    background-color: var(--light-bg);
+    border: 1px solid var(--dark-border);
+    padding: 4rem 3rem 3rem 3rem;     /* top padding larger for icon */
+    border-radius: 16px;
+    position: relative;               /* for absolute‑positioned icon */
+}
+/* Large opening quotation mark */
+.quote-icon {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    font-family: var(--font-serif);
+    font-size: 6rem;
+    color: rgba(37, 99, 235, 0.06);   /* subtle blue tint */
+    line-height: 1;
+    pointer-events: none;
+}
+/* Testimonial text */
+.quote-text {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+/* Container for author avatar + details */
+.quote-author-info {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+/* Avatar circle with initials */
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: var(--premium-blue-dark);
+    color: #FFFFFF;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+/* Second testimonial uses a pink accent avatar */
+.quote-card:nth-child(2) .author-avatar {
+    background-color: var(--premium-pink-accent);
+}
+/* Author name */
+.author-name {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 720;               /* bold-like weight appropriate for name */
+    color: var(--premium-blue-dark);
+}
+/* Author title / role */
+.author-title {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: #64748B;
+    font-weight: 500;
 }
 
 /* Service Detail Sections */
