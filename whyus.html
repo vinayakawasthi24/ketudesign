@@ -10,6 +10,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <meta name="description" content="Discover why Ketu Design Studio stands out with dedicated support, in‑house execution, premium quality standards, and luxury interior expertise." />
+    <style>
+        .why-us-hero {
+            background: url('assets/why_us_bg.jpg') center/cover no-repeat !important;
+        }
+        .whyus-page .why-us-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap:2rem;
+    margin-top:3rem;
+}
+        .whyus-page .why-us-card{
+            background:#fff;
+            border-radius:12px;
+            padding:1.8rem 1.5rem;
+            box-shadow:0 4px 12px rgba(0,0,0,0.07);
+            opacity:0;
+            transform:translateY(20px);
+            transition:all .5s ease-out;
+        }
+        .whyus-page .why-us-card.visible{
+            opacity:1;
+            transform:none;
+        }
+        .whyus-page .why-us-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+        }
+        .whyus-page .cta{
+            background:#0f0c29;
+            color:#fff;
+            padding:80px 0;
+            text-align:center;
+        }
+        .whyus-page .cta .btn{
+            background:#fff;
+            color:#0f0c29;
+            padding:.9rem 2rem;
+            border-radius:30px;
+            font-weight:600;
+            transition:background .3s,transform .3s;
+        }
+        .whyus-page .cta .btn:hover{
+            background:#e0e0e0;
+            transform:translateY(-3px);
+        }
+        @media(max-width:768px){
+            .whyus-page .page-banner{padding:80px 0 70px;}
+            .whyus-page .why-us-grid{grid-template-columns:1fr;}
+        }
+    </style>
 </head>
 <body class="whyus-page">
     <!-- Top Navigation Bar -->
@@ -18,7 +68,7 @@
         <ul class="nav-links">
             <li><a href="index.html">STUDIO</a></li>
             <li><a href="portfolio.html">PORTFOLIO</a></li>
-            <li><a href="services (1).html">SERVICES</a></li>
+            <li><a href="services.html">SERVICES</a></li>
             <li><a href="whyus.html">WHY US</a></li>
         <li><a href="insights.html">INSIGHTS</a></li>
 </ul>
@@ -28,37 +78,36 @@
     </nav>
 
     <!-- Page Banner -->
-    <header class="page-banner">
-        <div class="page-banner-content">
+    <section class="hero why-us-hero">
+
+        <div class="hero-overlay"></div>
+        <div class="hero-glass-card">
             <span class="badge badge-light">WHY US</span>
-            <h1>Why Choose Ketu Design Studio?</h1>
-            <p class="section-subtitle">Our commitment to excellence, premium quality, and end‑to‑end execution makes us the partner of choice for elite corporate interiors.</p>
+            <h1 class="hero-title">Why Choose Ketu Design Studio?</h1>
+            <p class="hero-subtitle">Our commitment to excellence, premium quality, and end‑to‑end execution makes us the partner of choice for elite corporate interiors.</p>
         </div>
-    </header>
+    </section>
 
     <!-- Why Us Content -->
     <section class="page-section" id="why-us-details">
         <div class="page-container-large">
+        
             <div class="why-us-grid">
                 <div class="why-us-card">
-                    <h3>Dedicated Support Team</h3>
-                    <p>From concept to handover, a single point of contact orchestrates every detail, ensuring seamless communication and swift issue resolution.</p>
+                    <h3>Integrated Support</h3>
+                    <p>Single point of contact ensures smooth communication.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>Complete In‑House Execution</h3>
-                    <p>All design, procurement, and construction phases are managed internally, guaranteeing quality control and schedule fidelity.</p>
+                    <h3>Full‑Cycle Execution</h3>
+                    <p>Design to build managed in‑house for quality & schedule.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>Assured Quality Standards</h3>
-                    <p>We adhere to rigorous industry benchmarks, using premium materials and precision craftsmanship for lasting, high‑impact spaces.</p>
+                    <h3>Premium Aesthetics</h3>
+                    <p>Glass‑morphism, curated lighting, and luxe finishes.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>Premium Office Interiors</h3>
-                    <p>Our designs blend cutting‑edge aesthetics with functional ergonomics, delivering environments that inspire performance and prestige.</p>
-                </div>
-                <div class="why-us-card">
-                    <h3>Luxury Design Excellence</h3>
-                    <p>Every project reflects a bespoke, high‑end vision—think glass‑morphism, curated lighting, and timeless elegance.</p>
+                    <h3>Smart Tech Integration</h3>
+                    <p>IoT lighting, acoustic solutions, and future‑ready spaces.</p>
                 </div>
             </div>
         </div>
@@ -92,17 +141,17 @@
                 <ul>
                     <li><a href="index.html">Studio</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="services (1).html">Services</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="insights.html">Insights</a></li>
                 </ul>
             </div>
             <div class="footer-links-col">
                 <h3>Our Core Services</h3>
                 <ul>
-                    <li><a href="services (1).html#strategy">Corporate Space Strategy</a></li>
-                    <li><a href="services (1).html#architecture">Bespoke Office Architecture</a></li>
-                    <li><a href="services (1).html#suites">C‑Suite Executive Design</a></li>
-                    <li><a href="services (1).html#amenities">Luxury Amenity Planning</a></li>
+                    <li><a href="services.html#strategy">Corporate Space Strategy</a></li>
+                    <li><a href="services.html#architecture">Bespoke Office Architecture</a></li>
+                    <li><a href="services.html#suites">C‑Suite Executive Design</a></li>
+                    <li><a href="services.html#amenities">Luxury Amenity Planning</a></li>
                 </ul>
             </div>
             <div class="footer-contact-col">
@@ -122,5 +171,19 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.why-us-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
 </body>
 </html>
