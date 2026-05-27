@@ -407,7 +407,7 @@ p, span, li, a, button, input {
     left: 200%;
 }
 
-/* --- Infinite Moving Partner Logo Carousel --- */
+//* --- Infinite Moving Partner Logo Carousel --- */
 .partners {
     background-color: var(--white-bg);
     padding: 5rem 0;
@@ -439,7 +439,7 @@ p, span, li, a, button, input {
     gap: 6rem;
     width: max-content;
     align-items: center;
-    /* Changed to 'infinite' and matches the exact keyframe configuration below */
+    /* Infinite configuration matches keyframe values perfectly */
     animation: marquee 20s linear infinite;
 }
 
@@ -449,7 +449,7 @@ p, span, li, a, button, input {
     justify-content: center;
     height: 45px;
     user-select: none;
-    /* CRITICAL: Prevents flexbox from compressing the images at the end of the line */
+    /* Prevents flexbox from compressing the images at the end of the line */
     flex-shrink: 0; 
 }
 
@@ -466,13 +466,12 @@ p, span, li, a, button, input {
     transform: scale(1.06);
 }
 
-/* Updated precise translation calculation */
+/* Precise translation calculation */
 @keyframes marquee {
     0% {
         transform: translateX(0);
     }
     100% {
-        /* Moving by exactly calc(-50% - 3rem) compensates perfectly for the layout gaps */
         transform: translateX(calc(-50% - 3rem));
     }
 }
@@ -516,7 +515,7 @@ p, span, li, a, button, input {
     font-weight: 300;
 }
 
-/* --- Services Grid Section (60% White Background) --- */
+/* --- Services Grid Section --- */
 .services {
     background-color: var(--light-bg);
     padding: 6.5rem 2rem;
@@ -541,6 +540,7 @@ p, span, li, a, button, input {
     flex-direction: column;
     height: 100%;
 }
+
 .service-img {
     max-width: 100%;
     max-height: 180px;
@@ -548,6 +548,7 @@ p, span, li, a, button, input {
     border-radius: 8px;
     margin-bottom: 0.8rem;
 }
+
 .service-card::before {
     content: '';
     position: absolute;
@@ -615,6 +616,8 @@ p, span, li, a, button, input {
 
 .card-link:hover {
     color: var(--premium-blue-button);
+}
+
 /* --- Detailed Subpages Styling Grid Layouts --- */
 
 /* Page Banner/Hero Header */
@@ -628,7 +631,7 @@ p, span, li, a, button, input {
     overflow: hidden;
 }
 
-/* --- Side Page Background Variations (no background images, gradients only) --- */
+/* --- Side Page Background Variations --- */
 .portfolio-page {
     background: linear-gradient(135deg, #0F172A, #1E293B);
 }
@@ -660,6 +663,7 @@ p, span, li, a, button, input {
     0% { transform: translateX(-30px); opacity: 0; }
     100% { transform: translateX(0); opacity: 1; }
 }
+
 .slide-in-left {
     animation: slideInLeft 0.8s ease-out forwards;
 }
@@ -817,11 +821,13 @@ p, span, li, a, button, input {
     letter-spacing: 0.05em;
     font-weight: 600;
 }
-    /* Section wrapper */
+
+/* --- Reviews Section wrapper --- */
 .reviews {
     background-color: var(--white-bg);
-    padding: 6rem 2rem;               /* generous vertical spacing */
+    padding: 6rem 2rem;
 }
+
 /* Grid for the two testimonial cards */
 .reviews-container {
     max-width: 1200px;
@@ -830,14 +836,16 @@ p, span, li, a, button, input {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
 }
+
 /* Individual testimonial card */
 .quote-card {
     background-color: var(--light-bg);
     border: 1px solid var(--dark-border);
-    padding: 4rem 3rem 3rem 3rem;     /* top padding larger for icon */
+    padding: 4rem 3rem 3rem 3rem;
     border-radius: 16px;
-    position: relative;               /* for absolute‑positioned icon */
+    position: relative;
 }
+
 /* Large opening quotation mark */
 .quote-icon {
     position: absolute;
@@ -845,10 +853,11 @@ p, span, li, a, button, input {
     left: 30px;
     font-family: var(--font-serif);
     font-size: 6rem;
-    color: rgba(37, 99, 235, 0.06);   /* subtle blue tint */
+    color: rgba(37, 99, 235, 0.06);
     line-height: 1;
     pointer-events: none;
 }
+
 /* Testimonial text */
 .quote-text {
     font-family: var(--font-sans);
@@ -860,12 +869,14 @@ p, span, li, a, button, input {
     position: relative;
     z-index: 1;
 }
+
 /* Container for author avatar + details */
 .quote-author-info {
     display: flex;
     align-items: center;
     gap: 1.25rem;
 }
+
 /* Avatar circle with initials */
 .author-avatar {
     width: 48px;
@@ -879,17 +890,20 @@ p, span, li, a, button, input {
     font-weight: 700;
     font-size: 0.9rem;
 }
+
 /* Second testimonial uses a pink accent avatar */
 .quote-card:nth-child(2) .author-avatar {
     background-color: var(--premium-pink-accent);
 }
+
 /* Author name */
 .author-name {
     font-family: var(--font-sans);
     font-size: 1rem;
-    font-weight: 720;               /* bold-like weight appropriate for name */
+    font-weight: 700;
     color: var(--premium-blue-dark);
 }
+
 /* Author title / role */
 .author-title {
     font-family: var(--font-sans);
@@ -938,7 +952,6 @@ p, span, li, a, button, input {
     margin-bottom: 1.25rem;
     color: var(--premium-blue-dark);
 }
-
 .service-details-body p {
     font-size: 1rem;
     color: #475569;
