@@ -533,7 +533,7 @@ p, span, li, a, button, input {
 .service-card {
     background-color: var(--white-bg);
     border: 1px solid var(--dark-border);
-    padding: 3.5rem 2.5rem;
+    padding: 2rem 1.5rem;
     border-radius: 16px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -541,7 +541,13 @@ p, span, li, a, button, input {
     flex-direction: column;
     height: 100%;
 }
-
+.service-img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
 .service-card::before {
     content: '';
     position: absolute;
@@ -609,8 +615,6 @@ p, span, li, a, button, input {
 
 .card-link:hover {
     color: var(--premium-blue-button);
-}
-
 /* --- Detailed Subpages Styling Grid Layouts --- */
 
 /* Page Banner/Hero Header */
