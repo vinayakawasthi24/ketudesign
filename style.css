@@ -1360,7 +1360,293 @@ p, span, li, a, button, input {
     justify-content: center;
     gap: 1.5rem;
 }
+/* --- Estimation Calculator --- */
+.calculator-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--dark-border);
+    margin: 0 auto;
+    max-width: 900px;
+}
 
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.calc-input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--premium-blue-dark);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calc-input-group input,
+.calc-input-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--dark-border);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: #f9f9fb;
+}
+
+.calc-input-group input:focus,
+.calc-input-group select:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+    outline: none;
+    background: #fff;
+}
+
+.calc-result-panel {
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    color: #fff;
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calc-result-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 70%);
+}
+
+.calc-result-panel h3 {
+    font-size: 1.3rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.calc-amount {
+    font-size: 3.8rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    margin-bottom: 1.5rem;
+    color: var(--accent-cyan);
+    text-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.calc-disclaimer {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+@media(max-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+    .calculator-container {
+        padding: 2rem 1.5rem;
+    }
+    .calc-amount {
+        font-size: 2.5rem;
+    }
+}
+/* --- Advanced Calculator Upgrades --- */
+.advanced-calc {
+    max-width: 1000px;
+}
+.calc-section {
+    margin-bottom: 2.5rem;
+}
+.calc-section h3 {
+    font-size: 1.1rem;
+    color: var(--premium-blue-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.calc-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.calc-section-header h3 {
+    margin-bottom: 0;
+}
+.area-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #f9f9fb;
+    border: 1px solid var(--dark-border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+.area-input-wrapper input {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100px;
+    text-align: right;
+    outline: none;
+}
+.area-input-wrapper span {
+    margin-left: 8px;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Styled Range Slider */
+.styled-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    outline: none;
+}
+.styled-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(56, 189, 248, 0.4);
+    transition: transform 0.1s;
+}
+.styled-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Quality Cards */
+.quality-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.quality-card {
+    cursor: pointer;
+    position: relative;
+}
+.quality-card input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.quality-card .card-content {
+    border: 2px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fff;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.quality-card:hover .card-content {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+.quality-card.active .card-content {
+    border-color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.05);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
+.quality-card h4 {
+    font-size: 1.1rem;
+    color: var(--premium-blue-dark);
+    margin-bottom: 0.5rem;
+}
+.quality-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 0.5rem;
+}
+.quality-card span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Addons Grid */
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.addon-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.addon-toggle:hover {
+    border-color: var(--accent-cyan);
+}
+.addon-toggle input {
+    display: none;
+}
+.addon-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    color: var(--premium-blue-dark);
+}
+.addon-info span {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background-color: #e2e8f0;
+    border-radius: 24px;
+    position: relative;
+    transition: 0.3s;
+}
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.addon-toggle input:checked + .toggle-switch {
+    background-color: var(--accent-cyan);
+}
+.addon-toggle input:checked + .toggle-switch::after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
 /* --- Extended Highly Aesthetic Footer --- */
 .footer {
     background-color: var(--premium-blue-dark);
